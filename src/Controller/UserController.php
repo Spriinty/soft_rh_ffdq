@@ -10,7 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
     /**
-     * Require ROLE_ADMIN for *every* controller method in this class.
      * @IsGranted("ROLE_USER")
      * @Route("/user", name="user")
      */

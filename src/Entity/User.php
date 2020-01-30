@@ -60,13 +60,15 @@ class User implements UserInterface
      */
     public function getRoles(): array
     {
-        return array('ROLE_USER');
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+    
+        return array_unique($roles);
     }
 
     public function setRoles(array $roles): void
     {
         $this->roles = $roles;
-
     }
 
     /**

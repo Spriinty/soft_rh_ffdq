@@ -25,6 +25,11 @@ class AdminController extends AbstractController
     $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
     // or add an optional message - seen by developers
-    $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
+    $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Seul le rôle admin est authorisé');
+
+    return $this->render('admin/index.html.twig', [
+        'controller_name' => 'AdminController',
+    ]);
+
 }
 }

@@ -35,7 +35,7 @@ class AppFixtures extends Fixture
            $manager->persist($user);
         }
 
-        $admin = new Admin();
+        $admin = new User();
         $admin-> setUsername('admin'); 
         $admin-> setRoles(['ROLE_ADMIN']);
         $admin->setPassword($this->passwordEncoder->encodePassword(

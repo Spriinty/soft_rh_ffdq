@@ -10,11 +10,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
     /**
+     * Require ROLE_ADMIN for *every* controller method in this class.
      * @IsGranted("ROLE_USER")
      * @Route("/user", name="user")
      */
     public function default(UserRepository $userRepository)
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+    // or add an optional message - seen by developers
+    $this->denyAccessUnlessGranted('ROLE_USER', null, 'Seul le rôle user est authorisé');
+
+    $user = $this->getUser();
+    
         return $this->render('user/index.html.twig', [
             'controller_name' => 'UserController',
         ]);

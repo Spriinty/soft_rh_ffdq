@@ -19,6 +19,7 @@ min-width: 100vw;
     background: #004445;
     text-align: center;
     height: 360px;
+    border-radius: 5px;
   }
  
   .box input[type = "text"],.box input[type = "password"]{
@@ -65,4 +66,8 @@ min-width: 100vw;
   .h6, h6 {
     font-size: 1rem;
     color: #ffff;
+}
+
+.h1, h1 {
+    
 }

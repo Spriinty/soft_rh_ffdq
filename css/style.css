@@ -1,12 +1,10 @@
 
 
-.container-fluid {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+.container {
+    min-height: 100vh;
+    background-size: 80%;
 }
+
 
 
 
@@ -40,7 +38,7 @@ min-width: 100vw;
 
 
   .box{
-    width: 350px;
+    width: 415px;
     padding: 50px;
     position: absolute;
     top: 50%;
@@ -48,7 +46,7 @@ min-width: 100vw;
     transform: translate(-50%,-50%);
     background: #004445;
     text-align: center;
-    height: 360px;
+    height: 490px;
     border-radius: 5px;
   }
  
@@ -106,6 +104,12 @@ min-width: 100vw;
     padding-top: 3rem!important;
     padding-left: 120px;
    
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    padding-top: 30px;
 }
   .h6, h6 {
     font-size: 1rem;

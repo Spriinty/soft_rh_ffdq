@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
 @font-face {
   font-family: "Harriet Display Medium";
   src: url(../scss/HarrietDisplay-Medium.woff);
@@ -27,6 +28,20 @@ body header p {
 }
 .main-user .stressed {
   color: #f8b400;
+}
+
+.main-admin .navbar-light .navbar-nav .nav-link {
+  color: #faf5e4;
+  background-color: #004445;
+  width: 200px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+}
+.main-admin .navbar-light .navbar-nav .nav-link:active {
+  border: 5px solid #f8b400;
+}
+.main-admin .navbar-light .navbar-nav .nav-link:last-child {
+  width: 150px;
 }
 
 /*# sourceMappingURL=styles.css.map */

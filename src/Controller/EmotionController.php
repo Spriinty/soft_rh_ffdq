@@ -27,5 +27,4 @@ class EmotionController extends AbstractController
         ]);
     }
 
-
 }

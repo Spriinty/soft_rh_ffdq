@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\EmotionRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,17 +14,18 @@ class UserController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/user", name="user")
      */
-    public function default()
+    public function default(UserRepository $userRepository ,EmotionRepository $emotionRepository)
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 
     // or add an optional message - seen by developers
     $this->denyAccessUnlessGranted('ROLE_USER', null, 'Seul le rôle user est authorisé');
-
-    $user = $this->getUser();
+    $user = $userRepository->findAll();
+    $emotions = $emotionRepository->findAll();
     
-        return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('user/vote.html.twig', [
+            'user' => $user,
+            'emotions' => $emotions
         ]);
     }
 
@@ -32,8 +34,8 @@ class UserController extends AbstractController
      */
     public function reponse()
     {
-        return $this->render('user/vote.html.twig', [
-            'controller_name' => 'EmotionController',
+        return $this->render('user/reponse.html.twig', [
+            'controller_name' => 'UserController',
         ]);
     }
 

@@ -1,11 +1,17 @@
 
 
-.container {
-    min-height: 100vh;
-    background-size: 80%;
+
+.pouet{
+    margin-top: -100px;
+    
 }
 
-
+.font-size-5{
+    font-size: 8rem;
+    margin-top: 14rem;
+    color:#004445;
+  font-family: m;
+}
 
 
 /* partie login */
@@ -19,21 +25,24 @@ min-width: 100vw;
 
 /* page erreur 404 */
 .bg-page-404{
-    background-image:url(../media/page-basique.jpg);
+    background-image:url(../media/page\ basique.png);
     min-height: 100vh;
-min-width: 100vw;
+    min-width: 100vw;
+    background-repeat: no-repeat;
 
 }
+
+.pl-5, .px-5 {
+    padding-left: 25rem!important;
+}
+.mt-5, .my-5 {
+    margin-top: 3rem!important;
+}
+
 
 
 /* page login deconexion */
 
-.bg-green-login{
-    background-image:url(../media/background-login.jpg); 
-    min-height: 100vh;
-    min-width: 100vw;
-    
-    }
 
 
 

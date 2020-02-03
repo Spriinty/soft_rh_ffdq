@@ -13,7 +13,7 @@ class UserController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/user", name="user")
      */
-    public function default(UserRepository $userRepository)
+    public function default()
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 

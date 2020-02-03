@@ -9,9 +9,23 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello veuillez voter svp! ✅</h1>
 
+<table>
+    <tr>
+        <th>Image</th>
+        <th>Emotion</th>
+    </tr>   
 
+{% for emotion in emotions %}
+
+<tr>
+<th>{{ emotion.imagesrc }}</th>
+<th>{{ emotion.name }}</th>
+</tr>
+
+{% endfor %}
+ </table> 
 
 
 </div>

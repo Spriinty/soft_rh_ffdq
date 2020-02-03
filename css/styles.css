@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
+@font-face {
+  font-family: "Harriet Display Medium";
+  src: url(../scss/HarrietDisplay-Medium.woff);
+}
+body {
+  background-image: url(../media/bg-body.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+body header p {
+  font-family: "Harriet Display Medium";
+  color: #faf5e4;
+  letter-spacing: 5px;
+}
+
+.main-user p {
+  font-family: "Harriet Display Medium";
+  color: #004445;
+  padding-top: 5px;
+}
+.main-user .tired {
+  color: #2c786c;
+}
+.main-user .happy {
+  color: #f16731;
+}
+.main-user .stressed {
+  color: #f8b400;
+}
+
+.main-admin .navbar-light .navbar-nav .nav-link {
+  color: #faf5e4;
+  background-color: #004445;
+  width: 200px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+}
+.main-admin .navbar-light .navbar-nav .nav-link:active {
+  border: 5px solid #f8b400;
+}
+.main-admin .navbar-light .navbar-nav .nav-link:last-child {
+  width: 150px;
+}
+
+/*# sourceMappingURL=styles.css.map */

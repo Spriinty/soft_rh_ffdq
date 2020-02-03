@@ -18,34 +18,14 @@ class EmotionController extends AbstractController
     }
 
         /**
-     * @Route("/emotion/heureux", name="heureux")
+     * @Route("/emotion/{id}", name="reponse")
      */
-    public function heureux()
+    public function reponse()
     {
         return $this->render('emotion/reponse.html.twig', [
             'controller_name' => 'EmotionController',
         ]);
     }
-
-        /**
-     * @Route("/emotion/fatigue", name="fatigue")
-     */
-    public function fatigue()
-    {
-        return $this->render('emotion/reponse.html.twig', [
-            'controller_name' => 'EmotionController',
-        ]);
-    }
-            /**
-     * @Route("/emotion/stress", name="stress")
-     */
-    public function stress()
-    {
-        return $this->render('emotion/reponse.html.twig', [
-            'controller_name' => 'EmotionController',
-        ]);
-    }
-    
 
 
 }

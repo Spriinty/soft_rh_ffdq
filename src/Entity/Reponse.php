@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Service;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReponseRepository")
@@ -24,14 +25,25 @@ class Reponse
     private $namereponse;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Emotion", mappedBy="reponse")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Emotion", inversedBy="reponses")
      */
     private $emotion;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Service", inversedBy="reponses")
+     */
+    private $service;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $date;
+
+
+
     public function __construct()
     {
-        $this->emotions = new ArrayCollection();
-        $this->emotion = new ArrayCollection();
+    
     }
 
     public function getId(): ?int
@@ -51,4 +63,41 @@ class Reponse
         return $this;
     }
 
+    public function getEmotion(): ?Emotion
+    {
+        return $this->emotion;
+    }
+
+    public function setEmotion(?Emotion $emotion): self
+    {
+        $this->emotion = $emotion;
+
+        return $this;
+    }
+
+    public function getService(): ?Service
+    {
+        return $this->service;
+    }
+
+    public function setService(?Service $service): self
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+   
 }

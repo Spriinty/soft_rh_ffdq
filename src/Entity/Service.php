@@ -28,9 +28,20 @@ class Service
      */
     private $users;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Service", inversedBy="reponses")
+     */
+    private $service;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Service", mappedBy="service")
+     */
+    private $reponses;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->reponses = new ArrayCollection();
     }
 
 
@@ -79,6 +90,49 @@ class Service
             // set the owning side to null (unless already changed)
             if ($user->getService() === $this) {
                 $user->setService(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getService(): ?self
+    {
+        return $this->service;
+    }
+
+    public function setService(?self $service): self
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getReponses(): Collection
+    {
+        return $this->reponses;
+    }
+
+    public function addReponse(self $reponse): self
+    {
+        if (!$this->reponses->contains($reponse)) {
+            $this->reponses[] = $reponse;
+            $reponse->setService($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReponse(self $reponse): self
+    {
+        if ($this->reponses->contains($reponse)) {
+            $this->reponses->removeElement($reponse);
+            // set the owning side to null (unless already changed)
+            if ($reponse->getService() === $this) {
+                $reponse->setService(null);
             }
         }
 

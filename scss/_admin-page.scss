@@ -1,0 +1,16 @@
+.main-admin{
+
+    .navbar-light .navbar-nav .nav-link{
+        color: $beige;
+        background-color: $dark-green;
+        width: 200px;
+        font-family: $font-monts-med;
+        border-radius: 5px;
+        &:active{
+            border: 5px solid $yellow;
+        }
+        &:last-child{
+            width: 150px;
+        }
+    }
+}

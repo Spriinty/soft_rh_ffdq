@@ -1,0 +1,14 @@
+body{
+    background-image: $bg-body;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+
+    header{
+        p{
+            font-family: $font-har-med;
+            color: $beige;
+            letter-spacing: 5px;
+        }
+    }
+}

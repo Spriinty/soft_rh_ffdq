@@ -3,7 +3,7 @@
 
 
 .bg-green-login{
-background-image:url(../media/background-login.jpg); 
+background-image:url(../media/bg-login.png); 
 min-height: 100vh;
 min-width: 100vw;
 
@@ -25,15 +25,23 @@ min-width: 100vw;
 
 }
 
+.font-size{
+   padding-top: 132px;
+}
+
 
 .pl-5, .px-5 {
     padding-left: 25rem!important;
 }
+
 .mt-5, .my-5 {
     margin-top: 3rem!important;
 }
 
-
+h2, h2 {
+    font-size: 8rem;
+    color: #004445;
+}
 
 /* partie login et deconexion*/
 
@@ -118,10 +126,7 @@ img {
 }
 
 
-h2, h2 {
-    font-size: 2rem;
-    color: #ffffff;
-}
+
 
 .icon{
     width: 180px;

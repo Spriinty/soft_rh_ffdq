@@ -1,20 +1,6 @@
 
+/* partie login et deconexion */
 
-
-.pouet{
-    margin-top: -100px;
-    
-}
-
-.font-size-5{
-    font-size: 8rem;
-    margin-top: 14rem;
-    color:#004445;
-  font-family: m;
-}
-
-
-/* partie login */
 
 .bg-green-login{
 background-image:url(../media/background-login.jpg); 
@@ -22,6 +8,13 @@ min-height: 100vh;
 min-width: 100vw;
 
 }
+
+/* partie login */
+.pouet{
+    margin-top: -100px;
+    
+}
+
 
 /* page erreur 404 */
 .bg-page-404{
@@ -32,6 +25,7 @@ min-width: 100vw;
 
 }
 
+
 .pl-5, .px-5 {
     padding-left: 25rem!important;
 }
@@ -41,10 +35,7 @@ min-width: 100vw;
 
 
 
-/* page login deconexion */
-
-
-
+/* partie login et deconexion*/
 
   .box{
     width: 415px;
@@ -59,6 +50,7 @@ min-width: 100vw;
     border-radius: 5px;
   }
  
+  /* partie login */
   .box input[type = "text"],.box input[type = "password"]{
     border:0;
     background: none;
@@ -125,3 +117,14 @@ img {
     color: #ffff;
 }
 
+
+h2, h2 {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.icon{
+    width: 180px;
+    height: 200px;
+
+}

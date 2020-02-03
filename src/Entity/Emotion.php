@@ -26,6 +26,7 @@ class Emotion
      */
     private $imagesrc;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,4 +55,5 @@ class Emotion
 
         return $this;
     }
+
 }

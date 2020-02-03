@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,6 +23,17 @@ class Reponse
      */
     private $namereponse;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Emotion", mappedBy="reponse")
+     */
+    private $emotion;
+
+    public function __construct()
+    {
+        $this->emotions = new ArrayCollection();
+        $this->emotion = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -37,4 +50,5 @@ class Reponse
 
         return $this;
     }
+
 }

@@ -28,12 +28,14 @@ class UserController extends AbstractController
     }
 
        /**
-     * @Route("user/vote/{id}", name="vote")
+     * @Route("user/reponse/{id}", name="reponse")
      */
-    public function vote()
+    public function reponse()
     {
         return $this->render('user/vote.html.twig', [
             'controller_name' => 'EmotionController',
         ]);
     }
+
+    
 }

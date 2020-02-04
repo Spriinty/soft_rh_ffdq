@@ -2,12 +2,17 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Emotion;
-use App\Repository\EmotionRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use App\Entity\Reponse;
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\EmotionRepository;
+use App\Repository\ReponseRepository;
+use App\Repository\ServiceRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
@@ -34,8 +39,18 @@ class UserController extends AbstractController
        /**
      * @Route("user/reponse/{id}", name="reponse")
      */
-    public function reponse(EmotionRepository $emotionRepository)
+    public function reponse(Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository)
     {
+        $user = $this->getUser();
+        $service = $serviceRepository->find($user->getService());
+        $time = new \DateTime();
+        $humeur = $emotionRepository->find($emotion);
+        $vote = new Reponse();
+        $vote->setDate($time);
+        $vote->setEmotion($humeur);
+        $vote->setService($service);
+        $entityManager->persist($vote);
+        $entityManager->flush();
 
         return $this->render('user/reponse.html.twig', [
             'controller_name' => 'UserController',

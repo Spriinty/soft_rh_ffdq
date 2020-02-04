@@ -34,6 +34,11 @@ class Reponse
      */
     private $date;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $newdate;
+
 
 
     public function __construct()
@@ -78,6 +83,18 @@ class Reponse
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getNewdate(): ?\DateTimeInterface
+    {
+        return $this->newdate;
+    }
+
+    public function setNewdate(\DateTimeInterface $newdate): self
+    {
+        $this->newdate = $newdate;
 
         return $this;
     }

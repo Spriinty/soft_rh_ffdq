@@ -45,17 +45,31 @@ class UserController extends AbstractController
         $service = $serviceRepository->find($user->getService());
         $time = new \DateTime();
         $humeur = $emotionRepository->find($emotion);
-        $vote = new Reponse();
-        $vote->setDate($time);
-        $vote->setEmotion($humeur);
-        $vote->setService($service);
-        $entityManager->persist($vote);
-        $entityManager->flush();
 
-        return $this->render('user/reponse.html.twig', [
-            'controller_name' => 'UserController',
-        ]);
-    }
+        
+        // La personne a-t-elle déjà votée?
+        
+        if(!$user) {
+            $vote = new Reponse();
 
+
+            $vote->setDate($time);
+            $vote->setNewdate($time);
     
+            dump($vote->setNewdate($time));die;
+    
+            $vote->setEmotion($humeur);
+            $vote->setService($service);
+            $entityManager->persist($vote);
+            $entityManager->flush();
+    
+            return $this->render('user/reponse.html.twig', [
+                'controller_name' => 'UserController',
+            ]);    
+        }else {
+            return $this->render('user/dejavote.html.twig', [
+                'controller_name' => 'UserController',
+            ]);
+        }
+    }  
 }

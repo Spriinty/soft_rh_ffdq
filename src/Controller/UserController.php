@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Emotion;
 use App\Repository\EmotionRepository;
+use App\Repository\ReponseRepository;
+use App\Repository\ServiceRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -31,13 +33,14 @@ class UserController extends AbstractController
         ]);
     }
 
-
-
        /**
      * @Route("user/reponse/{id}", name="reponse")
      */
-    public function reponse(EmotionRepository $emotionRepository)
+    public function reponse(EmotionRepository $emotionRepository, UserRepository $userRepository, ReponseRepository $reponseRepository, ServiceRepository $serviceRepository)
     {
+        
+
+
         return $this->render('user/reponse.html.twig', [
             'controller_name' => 'UserController',
         ]);

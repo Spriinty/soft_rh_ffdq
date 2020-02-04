@@ -17,25 +17,16 @@
 		}
 	</style>
 
-	<div class="example-wrapper">
-		<h1>Hello veuillez voter svp! ✅</h1>
+<div class="example-wrapper">
+<h1>Hello veuillez voter svp! ✅</h1>
 
-		<table>
-			<tr>
-				<th>Image</th>
-				<th>Emotion</th>
-			</tr>
+<div class="container">
+<div class="row">
 
-			{% for emotion in emotions %}
-				<div class="container">
-					<div class="row">
-						<div class="col-4"><img src="{{ asset(emotion.imagesrc) }}" alt="{{ emotion.name }}">
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		</table>
-
-
-	</div>
+{% for emotion in emotions %}
+<div class="col-4"><a href="{{ path('reponse', { 'id': emotion.id}) }}"><img src="{{ emotion.imagesrc }}" alt="{{ emotion.name }}"></a></div>
+{% endfor %}
+</div>
+</div>
+</div>
 {% endblock %}

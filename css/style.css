@@ -27,6 +27,8 @@ min-width: 100vw;
 
 .font-size{
    padding-top: 132px;
+   font-size: 8rem;
+    color: #004445;
 }
 
 
@@ -39,8 +41,8 @@ min-width: 100vw;
 }
 
 h2, h2 {
-    font-size: 8rem;
-    color: #004445;
+    font-size: 2rem;
+    color: #ffffff;
 }
 
 /* partie login et deconexion*/
@@ -131,5 +133,132 @@ img {
 .icon{
     width: 180px;
     height: 200px;
+
+}
+
+
+/* medias queries */
+@media (max-width: 575px)
+{
+  .bg-green-login{
+    background-image:url(../media/bg-login.png); 
+    min-height: 100vh;
+    min-width: 100vw;
+    
+    }
+    .box{
+      width: 291px;
+      padding: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background: #004445;
+      text-align: center;
+      height: 400px;
+      border-radius: 5px;
+    }
+   
+    /* partie login */
+    .box input[type = "text"],.box input[type = "password"]{
+      border:0;
+      background: none;
+      display: block;
+      margin: 15px auto;
+      text-align: center;
+      border: 2px solid #84792a;
+      padding: 5px 5px;
+      width: 200px;
+      outline: none;
+      color: white;
+      border-radius: 5px;
+      transition: 0.25s;
+      
+    }
+    .box input[type = "text"]:focus,.box input[type = "password"]:focus{
+      width: 280px;
+      border-color: #f1c40f;
+    }
+    .box input[type = "submit"]{
+      border:0;
+      background: none;
+      margin: 35px auto;
+      text-align: center;
+      padding: 5px 20px;
+      outline: none;
+      color: white;
+      border-radius: 5px;
+      transition: 0.25s;
+      cursor: pointer;
+      background-color: #ffc107;
+    }
+    .box input[type = "submit"]:hover{
+      background: #f1c40f;
+    }
+    svg{
+      background: white;
+      border-radius: 24px;
+      margin-bottom: 15px;
+    }
+  
+  
+    .h1, h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 4.2;
+      margin-top: 0;
+      color: #ffffff;
+  }
+  
+  .pt-5, .py-5 {
+      padding-top: 3rem!important;
+      padding-left: 120px;
+     
+  }
+  
+  img {
+      vertical-align: middle;
+      border-style: none;
+      padding-top: 30px;
+      width: 203px;
+      height: 91px;
+}
+  
+    .h6, h6 {
+      font-size: 1rem;
+      color: #ffff;
+  }
+
+  /* partie login */
+.pouet{
+  margin-top: -124px;
+  
+}
+
+
+}
+
+
+@media (min-width: 575.98px) and (max-width: 1200px)
+{
+
+  .pouet{
+    margin-top: -125px;
+    
+  }
+
+  .box{
+   width: 370px; ;
+    height: 405px;
+  
+}
+
+
+img {
+ 
+  width: 240px;
+  
+}
+
 
 }

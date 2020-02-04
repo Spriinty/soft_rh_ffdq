@@ -11,22 +11,14 @@
 <div class="example-wrapper">
     <h1>Hello veuillez voter svp! ✅</h1>
 
-<table>
-    <tr>
-        <th>Image</th>
-        <th>Emotion</th>
-    </tr>   
-
-{% for emotion in emotions %}
-
-<tr>
-<th>{{ emotion.imagesrc }}</th>
-<th>{{ emotion.name }}</th>
-</tr>
-
+    {% for emotion in emotions %}
+<div class="container">
+<div class="row">
+<div class="col-4"><img src="{{ asset(emotion.imagesrc) }}" alt="{{ emotion.name }}">
+</div>
+</div>
+</div>
 {% endfor %}
- </table> 
-
-
+ 
 </div>
 {% endblock %}

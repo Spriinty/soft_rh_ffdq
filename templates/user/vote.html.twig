@@ -20,6 +20,7 @@
 <div class="example-wrapper">
 <h1>Hello veuillez voter svp! ✅</h1>
 
+<<<<<<< HEAD
 <div class="container">
 <div class="row">
 
@@ -29,4 +30,15 @@
 </div>
 </div>
 </div>
+=======
+		<div class="container">
+			<div class="row">
+
+			{% for emotion in emotions %}
+				<div class="col-4"><a href="{{ path('reponse', { 'id': emotion.id}) }}"><img src="{{ emotion.imagesrc }}" alt="{{ emotion.name }}"></a></div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+>>>>>>> 317979d1d6d188d2f96d9d40869c86a9843a2e69
 {% endblock %}

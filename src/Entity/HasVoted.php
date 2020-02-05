@@ -17,30 +17,19 @@ class HasVoted
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $user;
-
-    /**
      * @ORM\Column(type="date")
      */
     private $date;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="hasVoteds")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $users;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getUser(): ?string
-    {
-        return $this->user;
-    }
-
-    public function setUser(string $user): self
-    {
-        $this->user = $user;
-
-        return $this;
     }
 
     public function getDate(): ?\DateTimeInterface
@@ -51,6 +40,18 @@ class HasVoted
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getUsers(): ?User
+    {
+        return $this->users;
+    }
+
+    public function setUsers(?User $users): self
+    {
+        $this->users = $users;
 
         return $this;
     }

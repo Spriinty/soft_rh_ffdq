@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Emotion;
+use App\Entity\HasVoted;
 use App\Entity\Reponse;
 use App\Repository\UserRepository;
 use App\Repository\EmotionRepository;
@@ -40,18 +41,22 @@ class UserController extends AbstractController
        /**
      * @Route("user/reponse/{id}", name="reponse")
      */
-    public function reponse( Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository)
+    public function reponse(  Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository)
     {
         $user = $this->getUser();
         
         $service = $serviceRepository->find($user->getService());
         
-
         //Nouvelle dateTime
         $time = new \DateTime();
 
         //On récupère uniquement la date Année-Mois-Jour
         $time->format('Y-m-d');
+
+        // $existHasVoted = $user->findBy(
+        //     ['name' => 'Keyboard'],
+        //     ['price' => 'ASC']
+        // );
         
 
         $humeur = $emotionRepository->find($emotion);
@@ -69,6 +74,13 @@ class UserController extends AbstractController
             // $vote->setService($name);
 
             $entityManager->persist($vote);
+            $entityManager->flush();
+
+            $hasVoted = new HasVoted();
+            $hasVoted->setDate($time);
+            $hasVoted->setUsers($user);
+
+            $entityManager->persist($hasVoted);
             $entityManager->flush();
     
             return $this->render('user/reponse.html.twig', [

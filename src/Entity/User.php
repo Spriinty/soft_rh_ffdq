@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -37,6 +39,16 @@ class User implements UserInterface
      * @ORM\JoinColumn(nullable=false)
      */
     private $service;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\HasVoted", mappedBy="users", orphanRemoval=true)
+     */
+    private $hasVoteds;
+
+    public function __construct()
+    {
+        $this->hasVoteds = new ArrayCollection();
+    }
 
 
 
@@ -107,6 +119,37 @@ class User implements UserInterface
     public function setService(?Service $service): self
     {
         $this->service = $service;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|HasVoted[]
+     */
+    public function getHasVoteds(): Collection
+    {
+        return $this->hasVoteds;
+    }
+
+    public function addHasVoted(HasVoted $hasVoted): self
+    {
+        if (!$this->hasVoteds->contains($hasVoted)) {
+            $this->hasVoteds[] = $hasVoted;
+            $hasVoted->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHasVoted(HasVoted $hasVoted): self
+    {
+        if ($this->hasVoteds->contains($hasVoted)) {
+            $this->hasVoteds->removeElement($hasVoted);
+            // set the owning side to null (unless already changed)
+            if ($hasVoted->getUsers() === $this) {
+                $hasVoted->setUsers(null);
+            }
+        }
 
         return $this;
     }

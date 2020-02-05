@@ -7,6 +7,40 @@
 }
 /************************* bg-image *********************************/
 /************************* login-page *********************************/
+.bg-login {
+  background-image: url(../media/bg-login.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+.bg-login .m-top {
+  margin-top: 250px;
+}
+.bg-login .bg-green-form {
+  background-color: #004445;
+  border-radius: 5px;
+}
+.bg-login .bg-green-form h1 {
+  top: -16%;
+  right: 8%;
+}
+.bg-login .bg-green-form label {
+  font-family: "Montserrat", sans-serif;
+  color: #faf5e4;
+}
+.bg-login .bg-green-form input {
+  background-color: #004445;
+  border: 1px solid #f8b400;
+  border-radius: 5px;
+}
+.bg-login .bg-green-form button {
+  width: 150px;
+  background-color: #f8b400;
+  border-radius: 5px;
+  color: #faf5e4;
+  font-family: "Montserrat", sans-serif;
+}
+
 /************************* header *********************************/
 body {
   background-image: url(../media/bg-body.png);

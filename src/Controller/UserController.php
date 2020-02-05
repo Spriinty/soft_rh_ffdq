@@ -44,10 +44,7 @@ class UserController extends AbstractController
         $user = $this->getUser();
         $service = $serviceRepository->find($user->getService());
         //Nouvelle dateTime
-        $time = new \DateTime();
-        //formatage de la date en chaîne de caractère pour avoir la date sans l'heure
-        // $dateformat = date_format($time, 'Y-m-d');
-        // dump($dateformat);die;
+
 
         $humeur = $emotionRepository->find($emotion);
         

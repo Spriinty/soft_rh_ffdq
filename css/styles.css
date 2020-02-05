@@ -11,7 +11,7 @@
 body {
   background-image: url(../media/bg-body.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   min-height: 100vh;
 }
 body header p {

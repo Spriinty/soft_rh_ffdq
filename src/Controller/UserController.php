@@ -11,6 +11,7 @@ use App\Repository\ReponseRepository;
 use App\Repository\ServiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Date;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -44,19 +45,22 @@ class UserController extends AbstractController
         $user = $this->getUser();
         $service = $serviceRepository->find($user->getService());
         $time = new \DateTime();
-        $humeur = $emotionRepository->find($emotion);
 
+        $dateformat=date_format($time, 'Y-m-d');
+        dump($dateformat);die;
+        
+        $humeur = $emotionRepository->find($emotion);
+        
         
         // La personne a-t-elle déjà votée?
         
         if(!$user) {
             $vote = new Reponse();
 
-
             $vote->setDate($time);
             $vote->setNewdate($time);
     
-            dump($vote->setNewdate($time));die;
+            // dump($vote->setNewdate($time));die;
     
             $vote->setEmotion($humeur);
             $vote->setService($service);

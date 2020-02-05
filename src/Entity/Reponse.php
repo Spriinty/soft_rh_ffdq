@@ -30,15 +30,9 @@ class Reponse
     private $service;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="date", nullable=true)
      */
     private $date;
-
-    /**
-     * @ORM\Column(type="date" , nullable=true)
-     */
-    private $newdate;
-
 
 
     public function __construct()
@@ -87,15 +81,4 @@ class Reponse
         return $this;
     }
 
-    public function getNewdate(): ?\DateTimeInterface
-    {
-        return $this->newdate;
-    }
-
-    public function setNewdate(\DateTimeInterface $newdate): self
-    {
-        $this->newdate = $newdate;
-
-        return $this;
-    }
 }

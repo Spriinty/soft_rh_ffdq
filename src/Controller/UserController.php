@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Emotion;
+use App\Entity\HasVoted;
 use App\Entity\Reponse;
 use App\Repository\UserRepository;
 use App\Repository\EmotionRepository;
@@ -25,12 +26,12 @@ class UserController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 
-    // or add an optional message - seen by developers
-    $this->denyAccessUnlessGranted('ROLE_USER', null, 'Seul le rôle user est authorisé');
+        // or add an optional message - seen by developers
+        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Seul le rôle user est authorisé');
 
-    // $user = $this->getUser();
+        // $user = $this->getUser();
 
-    $emotions = $emotionRepository->findAll();
+        $emotions = $emotionRepository->findAll();
 
         return $this->render('user/vote.html.twig', [
             'emotions' => $emotions
@@ -40,38 +41,45 @@ class UserController extends AbstractController
        /**
      * @Route("user/reponse/{id}", name="reponse")
      */
-    public function reponse(Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository)
+    public function reponse( Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository, HasVoted $hasVotedRepository)
     {
         $user = $this->getUser();
         $service = $serviceRepository->find($user->getService());
-        //Nouvelle dateTime
+        $name = $hasVotedRepository->
+        dump($user);die;
 
+        //Nouvelle dateTime
+        $time = new \DateTime();
+
+        //On récupère uniquement la date Année-Mois-Jour
+        $time->format('Y-m-d');
+        
 
         $humeur = $emotionRepository->find($emotion);
         
         // La personne a-t-elle déjà votée?
         
-        if(!$user) {
             $vote = new Reponse();
 
             // $vote->getDate($dateformat);
             // $vote->getNewdate($dateformat);
             $vote->setDate($time);
-            $vote->setNewdate($time);
     
             $vote->setEmotion($humeur);
             $vote->setService($service);
+            // $vote->setService($name);
+
             $entityManager->persist($vote);
             $entityManager->flush();
     
             return $this->render('user/reponse.html.twig', [
-                'controller_name' => 'UserController',
+                'controller_name' => $time,
             ]);  
-        }  
-        else {
-            return $this->render('user/dejavote.html.twig', [
-                'controller_name' => 'UserController',
-            ]);
-        }
-   
+         
+        // else {
+        //     return $this->render('user/dejavote.html.twig', [
+        //         'controller_name' => 'UserController',
+        //     ]);
+        // }
+    }
 }

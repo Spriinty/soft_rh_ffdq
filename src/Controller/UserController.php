@@ -53,39 +53,38 @@ class UserController extends AbstractController
         //On récupère uniquement la date Année-Mois-Jour
         $time->format('Y-m-d');
 
-        // $existHasVoted = $user->findBy(
-        //     ['name' => 'Keyboard'],
-        //     ['price' => 'ASC']
+        // $service = $repository->findBy(
+        //     ['name' => 'Registration'],
+        //     ['name' => 'Registration']
         // );
-        
 
         $humeur = $emotionRepository->find($emotion);
         
         // La personne a-t-elle déjà votée?
-        
-            $vote = new Reponse();
-
-            // $vote->getDate($dateformat);
-            // $vote->getNewdate($dateformat);
-            $vote->setDate($time);
     
-            $vote->setEmotion($humeur);
-            $vote->setService($service);
-            // $vote->setService($name);
+        $vote = new Reponse();
 
-            $entityManager->persist($vote);
-            $entityManager->flush();
+        // $vote->getDate($dateformat);
+        // $vote->getNewdate($dateformat);
+        $vote->setDate($time);
 
-            $hasVoted = new HasVoted();
-            $hasVoted->setDate($time);
-            $hasVoted->setUsers($user);
+        $vote->setEmotion($humeur);
+        $vote->setService($service);
+        // $vote->setService($name);
 
-            $entityManager->persist($hasVoted);
-            $entityManager->flush();
-    
-            return $this->render('user/reponse.html.twig', [
-                'controller_name' => $time,
-            ]);  
+        $entityManager->persist($vote);
+        $entityManager->flush();
+
+        $hasVoted = new HasVoted();
+        $hasVoted->setDate($time);
+        $hasVoted->setUsers($user);
+
+        $entityManager->persist($hasVoted);
+        $entityManager->flush();
+
+        return $this->render('user/reponse.html.twig', [
+            'controller_name' => $time,
+        ]);  
          
         // else {
         //     return $this->render('user/dejavote.html.twig', [

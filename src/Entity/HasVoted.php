@@ -19,7 +19,7 @@ class HasVoted
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $user;
 
     /**
      * @ORM\Column(type="date")
@@ -31,14 +31,14 @@ class HasVoted
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getUser(): ?string
     {
-        return $this->name;
+        return $this->user;
     }
 
-    public function setName(string $name): self
+    public function setUser(string $user): self
     {
-        $this->name = $name;
+        $this->user = $user;
 
         return $this;
     }

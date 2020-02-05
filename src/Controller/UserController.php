@@ -5,7 +5,6 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Emotion;
-use App\Entity\HasVoted;
 use App\Entity\Reponse;
 use App\Repository\UserRepository;
 use App\Repository\EmotionRepository;
@@ -41,12 +40,12 @@ class UserController extends AbstractController
        /**
      * @Route("user/reponse/{id}", name="reponse")
      */
-    public function reponse( Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository, HasVoted $hasVotedRepository)
+    public function reponse( Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository)
     {
         $user = $this->getUser();
+        
         $service = $serviceRepository->find($user->getService());
-        $name = $hasVotedRepository->
-        dump($user);die;
+        
 
         //Nouvelle dateTime
         $time = new \DateTime();

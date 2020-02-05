@@ -53,7 +53,7 @@ class UserController extends AbstractController
         
         // La personne a-t-elle déjà votée?
         
-        // if(isset($time)) {
+        if(!$user) {
             $vote = new Reponse();
 
             // $vote->getDate($dateformat);
@@ -69,11 +69,11 @@ class UserController extends AbstractController
             return $this->render('user/reponse.html.twig', [
                 'controller_name' => 'UserController',
             ]);  
-        
-        // else {
-        //     return $this->render('user/dejavote.html.twig', [
-        //         'controller_name' => 'UserController',
-        //     ]);
-        // }
-    }  
+        }  
+        else {
+            return $this->render('user/dejavote.html.twig', [
+                'controller_name' => 'UserController',
+            ]);
+        }
+   
 }

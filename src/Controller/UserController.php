@@ -9,6 +9,7 @@ use App\Entity\HasVoted;
 use App\Entity\Reponse;
 use App\Repository\UserRepository;
 use App\Repository\EmotionRepository;
+use App\Repository\HasVotedRepository;
 use App\Repository\ReponseRepository;
 use App\Repository\ServiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -41,7 +42,7 @@ class UserController extends AbstractController
        /**
      * @Route("user/reponse/{id}", name="reponse")
      */
-    public function reponse(  Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository)
+    public function reponse(  Emotion $emotion, EntityManagerInterface $entityManager, EmotionRepository $emotionRepository, ServiceRepository $serviceRepository, HasVotedRepository $hasVotedRepository )
     {
         $user = $this->getUser();
         
@@ -53,11 +54,16 @@ class UserController extends AbstractController
         //On récupère uniquement la date Année-Mois-Jour
         $time->format('Y-m-d');
 
-        // $service = $repository->findBy(
-        //     ['name' => 'Registration'],
-        //     ['name' => 'Registration']
-        // );
+        $hasVoted = $hasVotedRepository->findOneBy(
+            ['date' => $time, 'users' => $user]
+        );
 
+        if($hasVoted!==null){
+            return $this->render('user/dejavote.html.twig', [
+                'controller_name' => $time,
+            ]);  
+        }
+        // dump($hasVoted);die;
         $humeur = $emotionRepository->find($emotion);
         
         // La personne a-t-elle déjà votée?
@@ -75,11 +81,11 @@ class UserController extends AbstractController
         $entityManager->persist($vote);
         $entityManager->flush();
 
-        $hasVoted = new HasVoted();
-        $hasVoted->setDate($time);
-        $hasVoted->setUsers($user);
+        $userHasVoted = new HasVoted();
+        $userHasVoted->setDate($time);
+        $userHasVoted->setUsers($user);
 
-        $entityManager->persist($hasVoted);
+        $entityManager->persist($userHasVoted);
         $entityManager->flush();
 
         return $this->render('user/reponse.html.twig', [

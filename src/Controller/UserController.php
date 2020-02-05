@@ -11,7 +11,6 @@ use App\Repository\ReponseRepository;
 use App\Repository\ServiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Date;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -44,23 +43,23 @@ class UserController extends AbstractController
     {
         $user = $this->getUser();
         $service = $serviceRepository->find($user->getService());
+        //Nouvelle dateTime
         $time = new \DateTime();
+        //formatage de la date en chaîne de caractère pour avoir la date sans l'heure
+        // $dateformat = date_format($time, 'Y-m-d');
+        // dump($dateformat);die;
 
-        $dateformat=date_format($time, 'Y-m-d');
-        dump($dateformat);die;
-        
         $humeur = $emotionRepository->find($emotion);
-        
         
         // La personne a-t-elle déjà votée?
         
-        if(!$user) {
+        // if(isset($time)) {
             $vote = new Reponse();
 
+            // $vote->getDate($dateformat);
+            // $vote->getNewdate($dateformat);
             $vote->setDate($time);
             $vote->setNewdate($time);
-    
-            // dump($vote->setNewdate($time));die;
     
             $vote->setEmotion($humeur);
             $vote->setService($service);
@@ -69,11 +68,12 @@ class UserController extends AbstractController
     
             return $this->render('user/reponse.html.twig', [
                 'controller_name' => 'UserController',
-            ]);    
-        }else {
-            return $this->render('user/dejavote.html.twig', [
-                'controller_name' => 'UserController',
-            ]);
-        }
+            ]);  
+        
+        // else {
+        //     return $this->render('user/dejavote.html.twig', [
+        //         'controller_name' => 'UserController',
+        //     ]);
+        // }
     }  
 }

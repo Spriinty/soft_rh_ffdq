@@ -30,12 +30,12 @@ class Reponse
     private $service;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $date;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date" , nullable=true)
      */
     private $newdate;
 
@@ -98,6 +98,4 @@ class Reponse
 
         return $this;
     }
-
-   
 }

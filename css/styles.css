@@ -32,6 +32,8 @@
   background-color: #004445;
   border: 1px solid #f8b400;
   border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  color: #faf5e4;
 }
 .bg-login .bg-green-form button {
   width: 150px;

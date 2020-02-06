@@ -8,9 +8,14 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Vous avez deja voté aujourd'hui</h1>
+{ {% block contentvote %}
 
 
-</div>
+    <div class="example-wrapper">
+        <h1>Vous avez deja voté aujourd'hui</h1>
+    </div>
+    
+{% endblock %}}
+
+
 {% endblock %}

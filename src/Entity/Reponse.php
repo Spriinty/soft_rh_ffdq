@@ -20,11 +20,6 @@ class Reponse
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $namereponse;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Emotion", inversedBy="reponses")
      */
     private $emotion;
@@ -35,10 +30,9 @@ class Reponse
     private $service;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $date;
-
 
 
     public function __construct()
@@ -49,18 +43,6 @@ class Reponse
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getNamereponse(): ?string
-    {
-        return $this->namereponse;
-    }
-
-    public function setNamereponse(?string $namereponse): self
-    {
-        $this->namereponse = $namereponse;
-
-        return $this;
     }
 
     public function getEmotion(): ?Emotion
@@ -99,5 +81,4 @@ class Reponse
         return $this;
     }
 
-   
 }

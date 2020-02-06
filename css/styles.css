@@ -1,8 +1,47 @@
+/************************* colors *********************************/
+/************************* font *********************************/
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
 @font-face {
   font-family: "Harriet Display Medium";
   src: url(../scss/HarrietDisplay-Medium.woff);
 }
+/************************* bg-image *********************************/
+/************************* login-page *********************************/
+.bg-login {
+  background-image: url(../media/bg-login.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+.bg-login .m-top {
+  margin-top: 250px;
+}
+.bg-login .bg-green-form {
+  background-color: #004445;
+  border-radius: 5px;
+}
+.bg-login .bg-green-form h1 {
+  top: -16%;
+  right: 8%;
+}
+.bg-login .bg-green-form label {
+  font-family: "Montserrat", sans-serif;
+  color: #faf5e4;
+}
+.bg-login .bg-green-form input {
+  background-color: #004445;
+  border: 1px solid #f8b400;
+  border-radius: 5px;
+}
+.bg-login .bg-green-form button {
+  width: 150px;
+  background-color: #f8b400;
+  border-radius: 5px;
+  color: #faf5e4;
+  font-family: "Montserrat", sans-serif;
+}
+
+/************************* header *********************************/
 body {
   background-image: url(../media/bg-body.png);
   background-repeat: no-repeat;
@@ -15,6 +54,7 @@ body header p {
   letter-spacing: 5px;
 }
 
+/************************* main-user *********************************/
 .main-user p {
   font-family: "Harriet Display Medium";
   color: #004445;
@@ -30,6 +70,7 @@ body header p {
   color: #f8b400;
 }
 
+/************************* main-admin *********************************/
 .main-admin .navbar-light .navbar-nav .nav-link {
   color: #faf5e4;
   background-color: #004445;
@@ -38,10 +79,47 @@ body header p {
   border-radius: 5px;
 }
 .main-admin .navbar-light .navbar-nav .nav-link:active {
-  border: 5px solid #f8b400;
+  border: 2px solid #f8b400;
+}
+.main-admin .navbar-light .navbar-nav .nav-link:hover {
+  border: 2px solid #f8b400;
 }
 .main-admin .navbar-light .navbar-nav .nav-link:last-child {
   width: 150px;
 }
+.main-admin .border-orange {
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #f16731;
+}
+.main-admin .border-yellow {
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #f8b400;
+}
+.main-admin .border-green {
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #2c786c;
+}
+.main-admin .bg-green {
+  background-color: #004445;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+.main-admin .bg-green .col-6 {
+  background-color: #faf5e4;
+  border-radius: 5px;
+}
+.main-admin .bg-green .col-6 .h2 {
+  color: #004445;
+  font-family: "Harriet Display Medium";
+}
+
+/************************* footer *********************************/
 
 /*# sourceMappingURL=styles.css.map */

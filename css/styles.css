@@ -122,6 +122,52 @@ body header p {
   font-family: "Harriet Display Medium";
 }
 
+/************************* disconnected page *********************************/
+.bg-green-login {
+  background-image: url(../media/bg-login.png);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.bg-green-login .box {
+  width: 415px;
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #004445;
+  text-align: center;
+  height: 490px;
+  border-radius: 5px;
+}
+.bg-green-login .box img {
+  vertical-align: middle;
+  border-style: none;
+  padding-top: 30px;
+}
+.bg-green-login .box h2, .bg-green-login .box h2 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.bg-green-login .box .icon {
+  width: 180px;
+  height: 200px;
+}
+
+/************************* 404 page *********************************/
+.bg-page-404 {
+  background-image: url(../media/bg-body.png);
+  min-height: 100vh;
+  min-width: 100vw;
+  background-repeat: no-repeat;
+}
+.bg-page-404 .pl-5, .bg-page-404 .px-5 {
+  padding-left: 25rem !important;
+}
+.bg-page-404 .mt-5, .bg-page-404 .my-5 {
+  margin-top: 3rem !important;
+}
+
 /************************* footer *********************************/
 .bg-footer {
   background-image: url(../media/bg-footer.png);

@@ -22,11 +22,12 @@ class ReponseRepository extends ServiceEntityRepository
     public function dailyCompanyResponse(){
         return $this->createQueryBuilder('r')
         ->select('COUNT(r.emotion)')
-        ->where("r.date='2020-02-05'")
-        ->groupby('r.emotion')
+        ->where("r.date='2020-05-02'")
+        // ->groupby('r.emotion')
         ->getQuery()
         ->getResult();
     }
+    
     // /**
     //  * @return Reponse[] Returns an array of Reponse objects
     //  */

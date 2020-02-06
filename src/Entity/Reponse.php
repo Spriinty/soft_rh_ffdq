@@ -30,10 +30,9 @@ class Reponse
     private $service;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $date;
-
 
 
     public function __construct()
@@ -82,5 +81,4 @@ class Reponse
         return $this;
     }
 
-   
 }

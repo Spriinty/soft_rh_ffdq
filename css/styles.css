@@ -123,5 +123,11 @@ body header p {
 }
 
 /************************* footer *********************************/
+.bg-footer {
+  background-image: url(../media/bg-footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 100%;
+}
 
 /*# sourceMappingURL=styles.css.map */

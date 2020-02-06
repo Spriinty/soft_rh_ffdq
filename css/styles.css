@@ -44,13 +44,13 @@
 }
 
 /************************* header *********************************/
-body {
+.bg-home {
   background-image: url(../media/bg-body.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
 }
-body header p {
+.bg-home header p {
   font-family: "Harriet Display Medium";
   color: #faf5e4;
   letter-spacing: 5px;
@@ -113,11 +113,11 @@ body header p {
   background-size: cover;
   min-height: 100vh;
 }
-.main-admin .bg-green .col-6 {
+.main-admin .bg-green .col-5 {
   background-color: #faf5e4;
   border-radius: 5px;
 }
-.main-admin .bg-green .col-6 .h2 {
+.main-admin .bg-green .col-5 .h2 {
   color: #004445;
   font-family: "Harriet Display Medium";
 }

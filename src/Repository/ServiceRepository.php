@@ -19,6 +19,17 @@ class ServiceRepository extends ServiceEntityRepository
         parent::__construct($registry, Service::class);
     }
 
+
+    public function AllserviceButRH(){
+
+        $qb = $this->createQueryBuilder('s');
+        $qb->select('s.id, s.name');
+        $qb->where('s.name != RH');
+        
+        return $qb->getQuery()
+        ->getResult();
+    }
+
     // /**
     //  * @return Service[] Returns an array of Service objects
     //  */

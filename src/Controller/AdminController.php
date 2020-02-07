@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Service;
 use App\Repository\ReponseRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -27,8 +28,15 @@ class AdminController extends AbstractController
 
     // or add an optional message - seen by developers
     $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Seul le rôle admin est authorisé');
-    $reponses= $reponseRepository->dailyCompanyResponse();
-    dump($reponses);die;
+    // $reponses= $reponseRepository->dailyCompanyResponse();
+    // // dump($reponses);die;
+    // $reponseperservice = $reponseRepository->dailyServiceResponse($id);
+    
+    $repository = $this->getDoctrine()->getRepository(Service::class);
+    $service = $repository->AllserviceButRH();
+    dump($service);die;
+
+   
 
     return $this->render('admin/index.html.twig', [
         'controller_name' => 'AdminController',

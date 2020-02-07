@@ -23,9 +23,9 @@ class ServiceRepository extends ServiceEntityRepository
     public function AllserviceButRH(){
 
         $qb = $this->createQueryBuilder('s');
-        $qb->select('s.id, s.name');
-        $qb->where('s.name != RH');
-        
+        $qb->select('s.id, s.nom');
+        $qb->where('s.nom != :service');
+        $qb->setParameter('service','RH');
         return $qb->getQuery()
         ->getResult();
     }

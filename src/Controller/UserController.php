@@ -28,7 +28,7 @@ class UserController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_USER');
 
         // or add an optional message - seen by developers
-        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Seul le rôle user est authorisé');
+        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Seul le rôle user est autorisé');
 
         // $user = $this->getUser();
 

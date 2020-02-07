@@ -23,24 +23,24 @@ class AdminController extends AbstractController
      * @Route("/admin", name="admin")
      */
     public function admin(ReponseRepository $reponseRepository)
-{
-    $this->denyAccessUnlessGranted('ROLE_ADMIN');
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-    // or add an optional message - seen by developers
-    $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Seul le rôle admin est authorisé');
-    // $reponses= $reponseRepository->dailyCompanyResponse();
-    // // dump($reponses);die;
-    // $reponseperservice = $reponseRepository->dailyServiceResponse($id);
-    
-    $repository = $this->getDoctrine()->getRepository(Service::class);
-    $service = $repository->AllserviceButRH();
-    dump($service);die;
+        // or add an optional message - seen by developers
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Seul le rôle admin est authorisé');
+        // $reponses= $reponseRepository->dailyCompanyResponse();
+        // // dump($reponses);die;
+        // $reponseperservice = $reponseRepository->dailyServiceResponse($id);
 
-   
+        $repository = $this->getDoctrine()->getRepository(Service::class);
+        $service = $repository->AllserviceButRH();
+        dump($service);
+        die;
 
-    return $this->render('admin/index.html.twig', [
-        'controller_name' => 'AdminController',
-    ]);
 
-}
+
+        return $this->render('admin/index.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
 }

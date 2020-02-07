@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Reponse;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Repository\ReponseRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Reponse|null find($id, $lockMode = null, $lockVersion = null)
@@ -20,14 +22,32 @@ class ReponseRepository extends ServiceEntityRepository
     }
 
     public function dailyCompanyResponse(){
+
+        $today= new \DateTime();
+        $currentdate=$today->format('Y-m-d');
+
         return $this->createQueryBuilder('r')
         ->select('COUNT(r.emotion)')
-        ->where("r.date='2020-05-02'")
-        // ->groupby('r.emotion')
+        ->where("r.date >= :today")
+        ->groupby('r.emotion')
+        ->setParameter('today', $currentdate)
         ->getQuery()
         ->getResult();
     }
-    
+
+    public function dailyServiceResponse($serviceid){
+
+        return $this->createQueryBuilder('r')
+        ->select('e.name, count(r.id) AS count')
+        ->join('r.emotion', 'e')
+        ->where('r.service = :service')
+        ->groupby('e.name')
+        ->setParameter('service', $serviceid)
+        ->getQuery()
+        ->getResult();
+    }
+
+
     // /**
     //  * @return Reponse[] Returns an array of Reponse objects
     //  */

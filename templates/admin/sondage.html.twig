@@ -2,108 +2,79 @@
 
 {% block sondage %}
 
-    <div class="main-admin">
-        <div class="container-fluid">
-            <div class="row">
-                 <!-- NAVBAR-->
-                 <div class="col-2 mt-5">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="mt-5 collapse navbar-collapse" id="navbarNavAltMarkup">     <!-- A COMPLETER VARIABLE-->
-                            <div class="mt-5 navbar-nav d-flex flex-column text-center align-items-center">
-                            <a class="mt-5 nav-item nav-link" href="/day">Analyse du jour</a>
-                            <a class="mt-5 nav-item nav-link" href="/month">Analyse du mois</a>
-                            <a class="mt-5 nav-item nav-link" href="/year">Analyse de l'année</a>
-                            <a class="mt-5 nav-item nav-link" href="logout.php">Déconnexion</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                <div class="col-10">
-                    <div class="row">
-
-                        <!-- GRAPHIK-->
-                        <div class="col-8 d-flex align-items-center justify-content-end"> 
-                            <canvas id="myChart" width="400" height="400"></canvas>
-                        </div>
-
-                        <!-- LEGEND -->
-                        <div class="col-2 mt-5 pt-5">  
-                            <div class="d-flex align-items-center">
-                                <div class="border-orange"></div>
-                                <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="128" height="128"></p> 
-                            </div class="d-flex align-items-center">
-                            <div class="d-flex align-items-center">
-                                <div class="border-yellow"></div>
-                                <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="128" height="128"></p> 
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="border-green"></div>                   
-                                <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="128" height="128"></p>
-                            </div>
+    <div class="container-fluid mb-5">
+        <div class="row">
+                <!-- NAVBAR-->
+                <div class="col-2 mt-5">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="mt-5 collapse navbar-collapse" id="navbarNavAltMarkup">     <!-- A COMPLETER VARIABLE-->
+                        <div class="mt-5 navbar-nav d-flex flex-column text-center align-items-center">
+                        <a class="mt-5 nav-item nav-link" href="/day">Analyse du jour</a>
+                        <a class="mt-5 nav-item nav-link" href="/month">Analyse du mois</a>
+                        <a class="mt-5 nav-item nav-link" href="/year">Analyse de l'année</a>
+                        <a class="mt-5 nav-item nav-link" href="logout.php">Déconnexion</a>
                         </div>
                     </div>
-                </div>
+                </nav>
             </div>
-        </div> 
-   
-        <!-- SERVICE SECTION-->
-        <!-- <div class="container-fluid bg-green"> 
-            <div class="container">
+            <div class="col-10">
                 <div class="row">
-                    <div class="col-6 bg-beige mt-5">
-                        <p class="h2 text-center text-uppercase">{{Name service A}}</p>  
-                        <div class="row justify-content-between">
-                            <div class="col-4 align-items-center"> 
-                                <canvas id="myChart" width="200" height="200"></canvas>
-                            </div>
-                            <div class="col-2">  
-                                <div class="d-flex align-items-center">
-                                    <div class="border-orange"></div>
-                                    <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="64" height="64"></p> 
-                                </div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <div class="border-yellow"></div>
-                                    <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="64" height="64"></p> 
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="border-green"></div>                   
-                                    <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="64" height="64"></p>
-                                </div>
-                            </div>
-                        </div>
+
+                    <!-- GRAPHIK-->
+                    <div class="col-8 d-flex align-items-center justify-content-end"> 
+                        <canvas id="myChart" width="400" height="400"></canvas>
                     </div>
-                    <div class="col-6 bg-beige mt-5">
-                        <p class="h2 text-center text-uppercase">{{Name service B}}</p>    
-                        <div class="row d-flex justify-content-between">
-                        
-                            <div class="col-4 align-items-center"> 
-                                <canvas id="myChart" width="200" height="200"></canvas>
-                            </div>
-                            
-                            <div class="col-2">  
-                                <div class="d-flex align-items-center">
-                                    <div class="border-orange"></div>
-                                    <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="64" height="64"></p> 
-                                </div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <div class="border-yellow"></div>
-                                    <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="64" height="64"></p> 
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="border-green"></div>                   
-                                    <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="64" height="64"></p>
-                                </div>
-                            </div>
+
+                    <!-- LEGEND -->
+                    <div class="col-2 mt-5 pt-5">  
+                        <div class="d-flex align-items-center">
+                            <div class="border-orange"></div>
+                            <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="128" height="128"></p> 
+                        </div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                            <div class="border-yellow"></div>
+                            <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="128" height="128"></p> 
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="border-green"></div>                   
+                            <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="128" height="128"></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
-    </main>
+        </div>
+    </div> 
+   
+    <!--SERVICE SECTION-->
+    <div class="container-fluid bg-green"> 
+        <div class="container vh-100">
+            <div class="row justify-content-between">
+                <div class="col-5 bg-beige mt-5">
+                    <p class="h2 text-center text-uppercase">{{Name service A}}</p>                        
+                        <canvas id="myChart" width="400" height="400"></canvas>                         
+                </div>
+                <div class="col-5 bg-beige mt-5">
+                    <p class="h2 text-center text-uppercase">{{Name service B}}</p>                          
+                        <canvas id="myChart" width="400" height="400"></canvas>                                          
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-5 bg-beige mt-5">
+                    <p class="h2 text-center text-uppercase">{{Name service A}}</p>                        
+                        <canvas id="myChart" width="400" height="400"></canvas>                         
+                </div>
+                <div class="col-5 bg-beige mt-5">
+                    <p class="h2 text-center text-uppercase">{{Name service B}}</p>                          
+                        <canvas id="myChart" width="400" height="400"></canvas>                                          
+                </div>
+            </div>
+        </div>
+    </div>
+
     
 {% endblock %}
 

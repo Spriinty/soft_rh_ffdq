@@ -31,7 +31,8 @@
     <title>Soft RH</title>
   </head>
 
-  <body class="bg-home">
+  <body>
+    <div class="bg-home position-absolute"></div>
     <header>
         <div class="container-fluid pl-5">
             <div class="row">
@@ -39,16 +40,16 @@
                     <p class="h2 mt-4">Recueillir. Comprendre. Agir</p>
                 </div>
                 <div class="col-6 mt-5 pt-4 pr-3 d-flex justify-content-center">
-                    <h1 class="pt-1"><img src="../media/logo.png" alt="soft-rh-logo" width="320" height="85"></h1>
+                    <h1><img src="../media/logo.png" alt="soft-rh-logo" width="320" height="85"></h1>
                 </div>
             </div>
         </div>
     </header>
     <!-- header.html.twig-->
 
-    <div class="main-admin">
+    <main class="main-admin">
 
-        <div class="container-fluid">
+        <div class="container-fluid mb-5">
             <div class="row">
                  <!-- NAVBAR-->
                  <div class="col-2 mt-5">
@@ -100,94 +101,22 @@
             <div class="container vh-100">
                 <div class="row justify-content-between">
                     <div class="col-5 bg-beige mt-5">
-                        <p class="h2 text-center text-uppercase">{{Name service A}}</p>  
-                        <div class="row justify-content-between">
-                            <div class="col-3 align-items-center"> 
-                                <canvas id="myChart" width="200" height="200"></canvas>
-                            </div>
-                            <div class="col-2">  
-                                <div class="d-flex align-items-center">
-                                    <div class="border-orange"></div>
-                                    <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="64" height="64"></p> 
-                                </div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <div class="border-yellow"></div>
-                                    <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="64" height="64"></p> 
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="border-green"></div>                   
-                                    <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="64" height="64"></p>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="h2 text-center text-uppercase">{{Name service A}}</p>                        
+                            <canvas id="myChart" width="200" height="200"></canvas>                         
                     </div>
                     <div class="col-5 bg-beige mt-5">
-                        <p class="h2 text-center text-uppercase">{{Name service B}}</p>    
-                        <div class="row d-flex justify-content-between">                       
-                            <div class="col-3 align-items-center"> 
-                                <canvas id="myChart" width="200" height="200"></canvas>
-                            </div>                          
-                            <div class="col-2">  
-                                <div class="d-flex align-items-center">
-                                    <div class="border-orange"></div>
-                                    <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="64" height="64"></p> 
-                                </div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <div class="border-yellow"></div>
-                                    <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="64" height="64"></p> 
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="border-green"></div>                   
-                                    <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="64" height="64"></p>
-                                </div>
-                            </div>
-                        </div>                       
+                        <p class="h2 text-center text-uppercase">{{Name service B}}</p>                          
+                            <canvas id="myChart" width="200" height="200"></canvas>                                          
                     </div>
                 </div>
                 <div class="row justify-content-between">
                     <div class="col-5 bg-beige mt-5">
-                        <p class="h2 text-center text-uppercase">{{Name service C}}</p>  
-                        <div class="row justify-content-between">
-                            <div class="col-3 align-items-center"> 
-                                <canvas id="myChart" width="200" height="200"></canvas>
-                            </div>
-                            <div class="col-2">  
-                                <div class="d-flex align-items-center">
-                                    <div class="border-orange"></div>
-                                    <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="64" height="64"></p> 
-                                </div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <div class="border-yellow"></div>
-                                    <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="64" height="64"></p> 
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="border-green"></div>                   
-                                    <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="64" height="64"></p>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="h2 text-center text-uppercase">{{Name service A}}</p>                        
+                            <canvas id="myChart" width="200" height="200"></canvas>                         
                     </div>
                     <div class="col-5 bg-beige mt-5">
-                        <p class="h2 text-center text-uppercase">{{Name service D}}</p>    
-                        <div class="row d-flex justify-content-between">                       
-                            <div class="col-3 align-items-center"> 
-                                <canvas id="myChart" width="200" height="200"></canvas>
-                            </div>                          
-                            <div class="col-2">  
-                                <div class="d-flex align-items-center">
-                                    <div class="border-orange"></div>
-                                    <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="64" height="64"></p> 
-                                </div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <div class="border-yellow"></div>
-                                    <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="64" height="64"></p> 
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="border-green"></div>                   
-                                    <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="64" height="64"></p>
-                                </div>
-                            </div>
-                        </div>                       
+                        <p class="h2 text-center text-uppercase">{{Name service B}}</p>                          
+                            <canvas id="myChart" width="200" height="200"></canvas>                                          
                     </div>
                 </div>
             </div>
@@ -200,7 +129,7 @@
         <div class="container-fluid bg-footer">
             <div class="container">
                 <div class="row d-flex justify-content-center">
-                    <p class="pt-5"><img src="../media/logo.png" alt="soft-rh-logo" width="320" height="85"></p>
+                    <p class="my-5 pt-2"><img src="../media/logo.png" alt="soft-rh-logo" width="320" height="85"></p>
                 </div>
             </div>
         </div>

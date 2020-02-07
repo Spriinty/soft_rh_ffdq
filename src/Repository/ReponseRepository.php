@@ -46,6 +46,32 @@ class ReponseRepository extends ServiceEntityRepository
         ->getResult();
     }
 
+        // $todayperservice= new \DateTime();
+        // $currentdateperservice=$todayperservice->format('Y-m-d');
+
+        // return $this->createQueryBuilder('r')
+        // ->select('s.id, count(CASE WHEN r.date = :date) AS count')
+        // ->join('r.service', 's')
+        // ->where('r.service = :service')
+        // ->groupby('e.name')
+        // ->setParameter( 'service', $serviceid )
+        // ->getQuery()
+        // ->getResult();
+
+        // $sql = 'SELECT d.id 
+        // as departement_id , count(case when v.date= :day then 1 end) 
+        // as nbrVotantParDepartement, GROUP_CONCAT( CASE WHEN v.date = :day THEN v.humeur_id END ) 
+        // AS humeur 
+        // from departement d 
+        // left join vote v 
+        // on v.departement_id=d.id 
+        // group by d.nom 
+        // order by d.id 
+        // asc';
+
+        //On sélectionne le n° de service
+        // Dans le cas où la date de la réponse est égale à la date du jour,
+        //
 
     // /**
     //  * @return Reponse[] Returns an array of Reponse objects

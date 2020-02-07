@@ -3,8 +3,6 @@
 namespace App\Repository;
 
 use App\Entity\Reponse;
-use App\Repository\ReponseRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 

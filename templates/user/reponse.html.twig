@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'index.html.twig' %}
 
 {% block title %}Hello UserController!{% endblock %}
 
@@ -8,9 +8,10 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+{ {% block contentvote %}
 <div class="example-wrapper">
     <h1>Votre vote a bien été pris en compte ! ✅</h1>
 {# <p>{{controller_name}}</p> #}
-
+{% endblock %}}
 </div>
 {% endblock %}

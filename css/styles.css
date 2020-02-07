@@ -32,6 +32,8 @@
   background-color: #004445;
   border: 1px solid #f8b400;
   border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  color: #faf5e4;
 }
 .bg-login .bg-green-form button {
   width: 150px;
@@ -42,13 +44,13 @@
 }
 
 /************************* header *********************************/
-body {
+.bg-home {
   background-image: url(../media/bg-body.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
 }
-body header p {
+.bg-home header p {
   font-family: "Harriet Display Medium";
   color: #faf5e4;
   letter-spacing: 5px;
@@ -111,15 +113,67 @@ body header p {
   background-size: cover;
   min-height: 100vh;
 }
-.main-admin .bg-green .col-6 {
+.main-admin .bg-green .col-5 {
   background-color: #faf5e4;
   border-radius: 5px;
 }
-.main-admin .bg-green .col-6 .h2 {
+.main-admin .bg-green .col-5 .h2 {
   color: #004445;
   font-family: "Harriet Display Medium";
 }
 
+/************************* disconnected page *********************************/
+.bg-green-login {
+  background-image: url(../media/bg-login.png);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.bg-green-login .box {
+  width: 415px;
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #004445;
+  text-align: center;
+  height: 490px;
+  border-radius: 5px;
+}
+.bg-green-login .box img {
+  vertical-align: middle;
+  border-style: none;
+  padding-top: 30px;
+}
+.bg-green-login .box h2, .bg-green-login .box h2 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.bg-green-login .box .icon {
+  width: 180px;
+  height: 200px;
+}
+
+/************************* 404 page *********************************/
+.bg-page-404 {
+  background-image: url(../media/bg-body.png);
+  min-height: 100vh;
+  min-width: 100vw;
+  background-repeat: no-repeat;
+}
+.bg-page-404 .pl-5, .bg-page-404 .px-5 {
+  padding-left: 25rem !important;
+}
+.bg-page-404 .mt-5, .bg-page-404 .my-5 {
+  margin-top: 3rem !important;
+}
+
 /************************* footer *********************************/
+.bg-footer {
+  background-image: url(../media/bg-footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 100%;
+}
 
 /*# sourceMappingURL=styles.css.map */

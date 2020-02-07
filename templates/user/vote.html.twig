@@ -1,32 +1,39 @@
-{% extends 'base.html.twig' %}
+{% extends 'index.html.twig' %}
 
-{% block title %}Hello UserController!
-{% endblock %}
+{% block contentvote %}
 
-{% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
-
-<div class="example-wrapper">
-<h1>Hello veuillez voter svp! ✅</h1>
-
-		<div class="container">
-			<div class="row">
-
-			{% for emotion in emotions %}
-				<div class="col-4"><a href="{{ path('reponse', { 'id': emotion.id}) }}"><img src="{{ emotion.imagesrc }}" alt="{{ emotion.name }}"></a></div>
-			{% endfor %}
-			</div>
-		</div>
-	</div>
+    
+        <div class="container-fluid">
+            <div class="container text-center text-uppercase mt-5 pt-5">
+                <div class="row d-block">
+                    {# <p class="h3 mt-5 font-weight-bold">{{ controller_name }},</p>  <!--A COMPLETER VARIABLE--> #}
+                    {# <p class="h3 font-weight-bold">Comment vous sentez-vous ce {{ emotions.id }}?</p> <!--A COMPLETER VARIABLE--> #}
+                    <div class="div mt-5">
+                        <ul class="list-unstyled d-flex flex-row justify-content-between">
+                            {% for emotion in emotions %}
+                                <li class="d-flex flex-column">
+                                    <a href="{{ path('reponse', { 'id': emotion.id}) }}">
+                                    <input type="image" src="{{ emotion.imagesrc }}" alt="{{ emotion.name }}"></a>
+                                    <label for="tired" class="tired text-uppercase h3">Fatigué</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        {# <ul class="list-unstyled d-flex flex-row justify-content-between">
+                            <li class="d-flex flex-column">
+                                <input type="image" id="" src="../media/tired.gif">    <!-- A COMPLETER VARIABLE-->
+                                <label for="tired" class="tired text-uppercase h3">Fatigué</label>
+                            </li>
+                            <li class="d-flex flex-column">
+                                <input type="image" id="" src="../media/happy.gif">
+                                <label for="happy" class="happy text-uppercase h3">Heureux</label>
+                            </li>
+                            <li class="d-flex flex-column">
+                                <input type="image" id="" src="../media/stressed.gif">
+                                <label for="stressed" class="stressed text-uppercase h3">Stressé</label>
+                            </li>
+                        </ul> #}
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}

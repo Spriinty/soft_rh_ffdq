@@ -3,8 +3,6 @@
 namespace App\Repository;
 
 use App\Entity\Reponse;
-use App\Repository\ReponseRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
@@ -36,8 +34,6 @@ class ReponseRepository extends ServiceEntityRepository
     }
 
     public function dailyServiceResponse($serviceid){
-
-        $serviceid = 
 
         return $this->createQueryBuilder('r')
         ->select('e.name, count(r.id) AS count')

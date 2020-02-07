@@ -1,8 +1,6 @@
 {% extends 'index.html.twig' %}
 
 {% block contentvote %}
-
-    
         <div class="container-fluid">
             <div class="container text-center text-uppercase mt-5 pt-5">
                 <div class="row d-block">
@@ -14,7 +12,7 @@
                                 <li class="d-flex flex-column">
                                     <a href="{{ path('reponse', { 'id': emotion.id}) }}">
                                     <input type="image" src="{{ emotion.imagesrc }}" alt="{{ emotion.name }}"></a>
-                                    <label for="tired" class="tired text-uppercase h3">Fatigué</label>
+                                    <label for="tired" class="tired text-uppercase h3">{{ emotion.name }}</label>
                                 </li>
                             {% endfor %}
                         </ul>

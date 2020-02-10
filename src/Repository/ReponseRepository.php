@@ -53,32 +53,27 @@ class ReponseRepository extends ServiceEntityRepository
          return $dbq[0];
     }
 
-        // $todayperservice= new \DateTime();
-        // $currentdateperservice=$todayperservice->format('Y-m-d');
+    public function monthlyServiceResponse($serviceid, $emotionid){
 
-        // return $this->createQueryBuilder('r')
-        // ->select('s.id, count(CASE WHEN r.date = :date) AS count')
-        // ->join('r.service', 's')
-        // ->where('r.service = :service')
-        // ->groupby('e.name')
-        // ->setParameter( 'service', $serviceid )
-        // ->getQuery()
-        // ->getResult();
+        $monthlyperservice= new \DateTime();
+        $currentmonthperservice=$monthlyperservice->format('Y-m');
 
-        // $sql = 'SELECT d.id 
-        // as departement_id , count(case when v.date= :day then 1 end) 
-        // as nbrVotantParDepartement, GROUP_CONCAT( CASE WHEN v.date = :day THEN v.humeur_id END ) 
-        // AS humeur 
-        // from departement d 
-        // left join vote v 
-        // on v.departement_id=d.id 
-        // group by d.nom 
-        // order by d.id 
-        // asc';
+        $dbq = $this->createQueryBuilder('r')
+         ->select('count(r.id) AS count')
+         ->where('r.service = :service') 
+         ->andWhere('r.emotion = :emotion')
+         ->andWhere('r.date LIKE :currentmonth')
+         ->setParameter('service', $serviceid)
+         ->setParameter('emotion', $emotionid)
+         ->setParameter('currentmonth', $currentmonthperservice. '-%')
+         ->getQuery()
+         ->getResult();
+         return $dbq[0];
+    }
 
-        //On sélectionne le n° de service
-        // Dans le cas où la date de la réponse est égale à la date du jour,
-        //
+    
+
+    
 
     // /**
     //  * @return Reponse[] Returns an array of Reponse objects

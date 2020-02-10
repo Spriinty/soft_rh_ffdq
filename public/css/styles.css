@@ -8,7 +8,7 @@
 /************************* bg-image *********************************/
 /************************* login-page *********************************/
 .bg-login {
-  background-image: url(../media/bg-login.png);
+  background-image: url(../medias/bg-login.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;

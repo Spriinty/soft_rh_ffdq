@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Reponse;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManager;
 
 
 /**
@@ -34,16 +35,22 @@ class ReponseRepository extends ServiceEntityRepository
         ->getResult();
     }
 
-    public function dailyServiceResponse($serviceid){
+    public function dailyServiceResponse($serviceid, $emotionid){
 
-        return $this->createQueryBuilder('r')
-        ->select('e.name, count(r.id) AS count')
-        ->join('r.emotion', 'e')
-        ->where('r.service = :service')
-        ->groupby('e.name')
-        ->setParameter('service', $serviceid)
-        ->getQuery()
-        ->getResult();
+        $todayperservice= new \DateTime();
+        $currentdateperservice=$todayperservice->format('Y-m-d');
+
+        $dbq = $this->createQueryBuilder('r')
+         ->select('count(r.id) AS count')
+         ->where('r.service = :service') 
+         ->andWhere('r.emotion = :emotion')
+         ->andWhere('r.date = :currentdate')
+         ->setParameter('service', $serviceid)
+         ->setParameter('emotion', $emotionid)
+         ->setParameter('currentdate', $currentdateperservice)
+         ->getQuery()
+         ->getResult();
+         return $dbq[0];
     }
 
         // $todayperservice= new \DateTime();

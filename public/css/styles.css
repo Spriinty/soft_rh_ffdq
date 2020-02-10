@@ -49,8 +49,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  min-width: 100%;
+  z-index: -1;
 }
-.bg-home header p {
+
+header p {
   font-family: "Harriet Display Medium";
   color: #faf5e4;
   letter-spacing: 5px;

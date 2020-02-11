@@ -2,17 +2,17 @@
 
 {% block sondage %}
 
-    <div class="container-fluid mb-5">
+   <div class="container-fluid">
         <div class="row">
                 <!-- NAVBAR-->
-                <div class="col-2 mt-5">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 mt-5">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="mt-5 collapse navbar-collapse" id="navbarNavAltMarkup">     <!-- A COMPLETER VARIABLE-->
-                        <div class="mt-5 navbar-nav d-flex flex-column text-center align-items-center">
+                    <div class="mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-5 collapse navbar-collapse" id="navbarNavAltMarkup">     <!-- A COMPLETER VARIABLE-->
+                        <div class="mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-5 pb-5 pb-sm-5 pb-md-5 pb-lg-0 pb-xl-0 navbar-nav d-flex flex-column text-center align-items-center">
                         <a class="mt-5 nav-item nav-link" href="/day">Analyse du jour</a>
                         <a class="mt-5 nav-item nav-link" href="/month">Analyse du mois</a>
                         <a class="mt-5 nav-item nav-link" href="/year">Analyse de l'année</a>
@@ -21,27 +21,27 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-10">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-5">
                 <div class="row">
 
                     <!-- GRAPHIK-->
-                    <div class="col-8 d-flex align-items-center justify-content-end"> 
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-0 pt-5 pt-sm-5 pt-md-5 pt-lg-5 pt-xl-0 d-flex align-items-center justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-end justify-content-xl-end"> 
                         <canvas id="myChart" width="400" height="400"></canvas>
                     </div>
 
                     <!-- LEGEND -->
-                    <div class="col-2 mt-5 pt-5">  
-                        <div class="d-flex align-items-center">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 px-0 justify-content-center justify-content-sm-center justify-content-md-center d-flex flex-md-row flex-lg-column flex-xl-column align-items-end ml-md-0 ml-lg-5 ml-xl-5 mt-md-0 mt-lg-5 mt-xl-5 pt-md-0 pt-lg-5 pt-xl-5">  
+                        <div class="d-flex pt-0 pt-sm-0 pt-md-0 pt-lg-5 pt-xl-0 mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-0 align-items-center">
                             <div class="border-orange"></div>
-                            <p><img src="../media/happy.gif" alt="happy--animate-emoticon" width="128" height="128"></p> 
+                            <p><img src="../medias/happy.gif" alt="happy--animate-emoticon" width="128" height="128"></p> 
                         </div class="d-flex align-items-center">
                         <div class="d-flex align-items-center">
                             <div class="border-yellow"></div>
-                            <p><img src="../media/stressed.gif" alt="stressed-animate-emoticon" width="128" height="128"></p> 
+                            <p><img src="../medias/stressed.gif" alt="stressed-animate-emoticon" width="128" height="128"></p> 
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="border-green"></div>                   
-                            <p><img src="../media/tired.gif" alt="tired-animate-emoticon" width="128" height="128"></p>
+                            <p><img src="../medias/tired.gif" alt="tired-animate-emoticon" width="128" height="128"></p>
                         </div>
                     </div>
                 </div>
@@ -51,24 +51,24 @@
    
     <!--SERVICE SECTION-->
     <div class="container-fluid bg-green"> 
-        <div class="container vh-100">
-            <div class="row justify-content-between">
-                <div class="col-5 bg-beige mt-5">
-                    <p class="h2 text-center text-uppercase">{{Name service A}}</p>                        
+        <div class="container">
+            <div class="row flex-md-column flex-lg-row flex-xl-row justify-content-md-center justify-content-lg-around justify-content-xl-between">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
+                    <p class="h2 pt-1 text-center text-uppercase">{{Name service A}}</p>                        
                         <canvas id="myChart" width="250" height="250"></canvas>                         
                 </div>
-                <div class="col-5 bg-beige mt-5">
-                    <p class="h2 text-center text-uppercase">{{Name service B}}</p>                          
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
+                    <p class="h2 pt-1 text-center text-uppercase">{{Name service B}}</p>                          
                         <canvas id="myChart" width="250" height="250"></canvas>                                          
                 </div>
             </div>
-            <div class="row justify-content-between">
-                <div class="col-5 bg-beige mt-5">
-                    <p class="h2 text-center text-uppercase">{{Name service A}}</p>                        
+            <div class="row pt-0 pt-sm-0 pt-md-0 pt-lg-5 pt-xl-5 pb-5 flex-md-column flex-lg-row flex-xl-row justify-content-md-center justify-content-lg-around justify-content-xl-between">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  text-center bg-beige mt-5">
+                    <p class="h2 pt-1 text-center text-uppercase">{{Name service A}}</p>                        
                         <canvas id="myChart" width="250" height="250"></canvas>                         
                 </div>
-                <div class="col-5 bg-beige mt-5">
-                    <p class="h2 text-center text-uppercase">{{Name service B}}</p>                          
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  text-center bg-beige mt-5">
+                    <p class="h2 pt-1 text-center text-uppercase">{{Name service B}}</p>                          
                         <canvas id="myChart" width="250" height="250"></canvas>                                          
                 </div>
             </div>

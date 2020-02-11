@@ -93,6 +93,4 @@ class AdminController extends AbstractController
             'monthstat' => $monthstat,
         ]);
     }
-
-
 }

@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Reponse;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManager;
+
 
 /**
  * @method Reponse|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +20,60 @@ class ReponseRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Reponse::class);
     }
+
+    public function dailyCompanyResponse(){
+
+        $today= new \DateTime();
+        $currentdate=$today->format('Y-m-d');
+
+        return $this->createQueryBuilder('r')
+        ->select('COUNT(r.emotion)')
+        ->where("r.date >= :today")
+        ->groupby('r.emotion')
+        ->setParameter('today', $currentdate)
+        ->getQuery()
+        ->getResult();
+    }
+
+    public function dailyServiceResponse($serviceid, $emotionid){
+
+        $todayperservice= new \DateTime();
+        $currentdateperservice=$todayperservice->format('Y-m-d');
+
+        $dbq = $this->createQueryBuilder('r')
+         ->select('count(r.id) AS count')
+         ->where('r.service = :service') 
+         ->andWhere('r.emotion = :emotion')
+         ->andWhere('r.date = :currentdate')
+         ->setParameter('service', $serviceid)
+         ->setParameter('emotion', $emotionid)
+         ->setParameter('currentdate', $currentdateperservice)
+         ->getQuery()
+         ->getResult();
+         return $dbq[0];
+    }
+
+    public function monthlyServiceResponse($serviceid, $emotionid){
+
+        $monthlyperservice= new \DateTime();
+        $currentmonthperservice=$monthlyperservice->format('Y-m');
+
+        $dbq = $this->createQueryBuilder('r')
+         ->select('count(r.id) AS count')
+         ->where('r.service = :service') 
+         ->andWhere('r.emotion = :emotion')
+         ->andWhere('r.date LIKE :currentmonth')
+         ->setParameter('service', $serviceid)
+         ->setParameter('emotion', $emotionid)
+         ->setParameter('currentmonth', $currentmonthperservice. '-%')
+         ->getQuery()
+         ->getResult();
+         return $dbq[0];
+    }
+
+    
+
+    
 
     // /**
     //  * @return Reponse[] Returns an array of Reponse objects

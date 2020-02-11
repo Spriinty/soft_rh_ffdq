@@ -8,7 +8,7 @@ var data = {
     ],
     datasets: [
         {
-            data: [300, 50, 100],   // id back vote
+            data: [stat, 50, 100],   // id back vote
             backgroundColor: [
                 "#2c786c",
                 "#f16731",

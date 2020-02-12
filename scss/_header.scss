@@ -1,15 +1,63 @@
 /************************* header *********************************/
-body{
+.bg-home{
     background-image: $bg-home;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+    min-width: 100%;
+    z-index: -1;
+}
+header{
+    p{
+        font-family: $font-har-med;
+        color: $beige;
+        letter-spacing: 5px;
+    }
+}
 
+/************************* header *********************************/
+@media (min-width: 992px) and (max-width: 1199.98px) {
     header{
-        p{
-            font-family: $font-har-med;
-            color: $beige;
-            letter-spacing: 5px;
+        .h2 {
+            font-size: 1.5rem;
+        }
+        img{
+            width: 160px;
+            height: 42.5px;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    header{
+        .h2{
+            font-size: 1.5rem;
+        }
+        img{
+            width: 120px;
+            height: 32px;
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px){
+    header{
+        .h2{
+            font-size: 1.5rem;
+        }
+        img{
+            width: 160px;
+            height: 42px;
+        }
+    }
+}
+@media (max-width: 575.98px) {
+    header{
+        .h2{
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        img{
+            width: 160px;
+            height: 42px;
         }
     }
 }

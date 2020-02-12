@@ -32,6 +32,8 @@
   background-color: #004445;
   border: 1px solid #f8b400;
   border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  color: #faf5e4;
 }
 .bg-login .bg-green-form button {
   width: 150px;
@@ -42,18 +44,59 @@
 }
 
 /************************* header *********************************/
-body {
+.bg-home {
   background-image: url(../media/bg-body.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  min-width: 100%;
+  z-index: -1;
 }
-body header p {
+
+header p {
   font-family: "Harriet Display Medium";
   color: #faf5e4;
   letter-spacing: 5px;
 }
 
+/************************* header *********************************/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  header .h2 {
+    font-size: 1.5rem;
+  }
+  header img {
+    width: 160px;
+    height: 42.5px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  header .h2 {
+    font-size: 1.5rem;
+  }
+  header img {
+    width: 120px;
+    height: 32px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  header .h2 {
+    font-size: 1.5rem;
+  }
+  header img {
+    width: 160px;
+    height: 42px;
+  }
+}
+@media (max-width: 575.98px) {
+  header .h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  header img {
+    width: 160px;
+    height: 42px;
+  }
+}
 /************************* main-user *********************************/
 .main-user p {
   font-family: "Harriet Display Medium";
@@ -70,6 +113,24 @@ body header p {
   color: #f8b400;
 }
 
+/********************* mediaqueries ****************************/
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main-user .mt-5 {
+    margin-top: 1rem !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .main-user button, .main-user input, .main-user optgroup, .main-user select, .main-user textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 90%;
+  }
+  .main-user .h3, .main-user h3 {
+    font-size: 1.3rem;
+  }
+}
 /************************* main-admin *********************************/
 .main-admin .navbar-light .navbar-nav .nav-link {
   color: #faf5e4;
@@ -77,6 +138,7 @@ body header p {
   width: 200px;
   font-family: "Montserrat", sans-serif;
   border-radius: 5px;
+  border: 2px solid;
 }
 .main-admin .navbar-light .navbar-nav .nav-link:active {
   border: 2px solid #f8b400;
@@ -109,17 +171,259 @@ body header p {
   background-color: #004445;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
 }
-.main-admin .bg-green .col-6 {
+.main-admin .bg-green .bg-beige {
   background-color: #faf5e4;
   border-radius: 5px;
 }
-.main-admin .bg-green .col-6 .h2 {
+.main-admin .bg-green .bg-beige .h2 {
   color: #004445;
   font-family: "Harriet Display Medium";
 }
 
+/************************* mediaqueries *********************************/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .main-admin .border-orange, .main-admin .border-yellow, .main-admin .border-green {
+    width: 30px;
+  }
+  .main-admin img {
+    width: 64px;
+    height: 64px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .main-admin .navbar {
+    display: block;
+    text-align: end;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    right: 0;
+    padding-top: 5%;
+  }
+  .main-admin .navbar-light .navbar-toggler {
+    color: #004445;
+    border-color: #004445;
+  }
+  .main-admin .navbar-light .navbar-nav .nav-link {
+    width: 100%;
+  }
+  .main-admin .navbar-nav {
+    background-color: #faf5e4;
+  }
+  .main-admin img {
+    width: 64px;
+    height: 64px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main-admin .navbar {
+    display: block;
+    text-align: end;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    right: 0;
+    padding-top: 5%;
+  }
+  .main-admin .navbar-light .navbar-toggler {
+    color: #004445;
+    border-color: #004445;
+  }
+  .main-admin .navbar-light .navbar-nav .nav-link {
+    width: 100%;
+  }
+  .main-admin .navbar-nav {
+    background-color: #faf5e4;
+  }
+  .main-admin img {
+    width: 64px;
+    height: 64px;
+  }
+}
+@media (max-width: 575.98px) {
+  .main-admin .navbar {
+    display: block;
+    text-align: end;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    right: 0;
+    padding-top: 5%;
+  }
+  .main-admin .navbar-light .navbar-toggler {
+    border-color: #004445;
+  }
+  .main-admin .navbar-light .navbar-nav .nav-link {
+    width: 100%;
+  }
+  .main-admin .navbar-nav {
+    background-color: #faf5e4;
+  }
+  .main-admin img {
+    width: 32px;
+    height: 32px;
+  }
+  .main-admin #myChart {
+    width: 250px;
+    height: 250px;
+  }
+  .main-admin .border-green, .main-admin .border-orange, .main-admin .border-yellow {
+    width: 30px;
+  }
+  .main-admin .bg-green .h2 {
+    font-size: 1.5rem;
+  }
+}
+/************************* disconnected page *********************************/
+.bg-green-login {
+  background-image: url(../media/bg-login.png);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.bg-green-login .box {
+  width: 415px;
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #004445;
+  text-align: center;
+  height: 490px;
+  border-radius: 5px;
+}
+.bg-green-login .box img {
+  vertical-align: middle;
+  border-style: none;
+  padding-top: 30px;
+}
+.bg-green-login .box h2, .bg-green-login .box h2 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.bg-green-login .box .icon {
+  width: 180px;
+  height: 200px;
+}
+
+/*************************** mediaqueries *************/
+@media (max-width: 575px) {
+  .box {
+    width: 291px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #004445;
+    text-align: center;
+    height: 400px;
+    border-radius: 5px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .bg-green-login .box img {
+    vertical-align: middle;
+    border-style: none;
+    padding-top: 0px;
+  }
+
+  .bg-green-login .box h2, .bg-green-login .box h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .bg-green-login .box .icon {
+    width: 180px;
+    height: 185px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .bg-green-login .box img {
+    vertical-align: middle;
+    border-style: none;
+    padding-top: 0px;
+  }
+
+  .bg-green-login .box h2, .bg-green-login .box h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .bg-green-login .box .icon {
+    width: 180px;
+    height: 185px;
+  }
+}
+@media (max-width: 575.98px) {
+  .bg-green-login .box {
+    width: 309px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #004445;
+    text-align: center;
+    height: 490px;
+    border-radius: 5px;
+  }
+
+  .bg-green-login .box img {
+    vertical-align: middle;
+    border-style: none;
+    padding-top: 30px;
+    width: 290px;
+  }
+}
+/************************* 404 page *********************************/
+.main-404 .h2, .main-404 h2 {
+  font-size: 4rem;
+  margin-top: 150px;
+}
+
 /************************* footer *********************************/
+.bg-footer {
+  background-image: url(../media/bg-footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 100%;
+}
+
+/************************* mediaqueries *********************************/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  footer img {
+    width: 160px;
+    height: 42.5;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  footer img {
+    width: 160px;
+    height: 42.5;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  footer img {
+    width: 160px;
+    height: 42.5;
+  }
+}
+@media (max-width: 575.98px) {
+  footer .pt-4 {
+    padding-top: 0.5rem !important;
+  }
+  footer .pt-4 img {
+    width: 160px;
+    height: 42.5;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

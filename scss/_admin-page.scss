@@ -13,6 +13,8 @@
         width: 200px;
         font-family: $font-monts-med;
         border-radius: 5px;
+        border: 2px solid;
+        
         &:active{
             border: 2px solid $yellow;
         }
@@ -41,9 +43,8 @@
         background-color: $dark-green;
         background-repeat: no-repeat;
         background-size: cover;
-        min-height: 100vh;
 
-        .col-6{
+        .bg-beige{
             background-color: $beige;
             border-radius: 5px;
 
@@ -54,4 +55,109 @@
         }
     }
     
+}
+
+/************************* mediaqueries *********************************/
+@media (min-width: 992px) and (max-width: 1199.98px){
+    .main-admin{
+        .border-orange, .border-yellow, .border-green{
+            width: 30px;
+        }
+        img{
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .main-admin{
+        .navbar{
+            display: block;
+            text-align: end;
+            position: absolute;
+            width: 100%;
+            z-index: 9999;
+            right: 0;
+            padding-top: 5%;
+        }
+        .navbar-light .navbar-toggler{
+            color: $dark-green;
+            border-color: $dark-green;
+        }
+        .navbar-light .navbar-nav .nav-link{
+            width: 100%;
+        }
+        .navbar-nav{
+            background-color: $beige;           
+        }
+        img{
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px){
+    .main-admin{
+        .navbar{
+            display: block;
+            text-align: end;
+            position: absolute;
+            width: 100%;
+            z-index: 9999;
+            right: 0;
+            padding-top: 5%;
+        }
+        .navbar-light .navbar-toggler{
+            color: $dark-green;
+            border-color: $dark-green;
+        }
+        .navbar-light .navbar-nav .nav-link{
+            width: 100%;
+        }
+        .navbar-nav{
+            background-color: $beige;           
+        }
+        img{
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+@media (max-width: 575.98px){
+    .main-admin{
+        .navbar{
+            display: block;
+            text-align: end;
+            position: absolute;
+            width: 100%;
+            z-index: 9999;
+            right: 0;
+            padding-top: 5%;
+        }
+        .navbar-light .navbar-toggler{
+            border-color: $dark-green;
+        }
+        .navbar-light .navbar-nav .nav-link{
+            width: 100%;
+        }
+        .navbar-nav{
+            background-color: $beige;           
+        }
+        img{
+            width: 32px;
+            height: 32px;
+        }
+        #myChart{
+            width: 250px;
+            height: 250px;
+        }
+        .border-green, .border-orange, .border-yellow{
+            width: 30px;
+        }
+        .bg-green{
+            .h2{
+                font-size: 1.5rem;
+            }
+        }
+    }
 }

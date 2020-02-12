@@ -1,0 +1,10 @@
+/************************* font *********************************/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+@font-face{
+    font-family: 'Harriet Display Medium';
+    src: url(../scss/HarrietDisplay-Medium.woff); 
+}
+
+$font-har-med:'Harriet Display Medium';
+$font-monts-med: 'Montserrat', sans-serif;

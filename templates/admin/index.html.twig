@@ -28,21 +28,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!--  css-->
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" type="image/png"  href="./media/favicon.png">
-
+    <link rel="icon" type="image/png"  href="../medias/favicon.png">
 
     <title>Soft RH</title>
   </head>
 
-<div class="example-wrapper">
-   
   <body>
     <div class="bg-home position-absolute"></div>
         <header>{% block header %}{% endblock %}</header>
-        <main class="main-admin">{% block sondage %}
-        <a href="{{ path('admin_month') }}">stats par mois</a>
-        
-        {% endblock %}</main>
+        <main class="main-admin">{% block sondage %}{% endblock %}</main>
         <footer>{% block footer %}{% endblock %}</footer>
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

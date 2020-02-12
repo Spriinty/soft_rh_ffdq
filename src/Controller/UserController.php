@@ -65,8 +65,6 @@ class UserController extends AbstractController
         }
         // dump($hasVoted);die;
         $humeur = $emotionRepository->find($emotion);
-        
-        // La personne a-t-elle déjà votée?
     
         $vote = new Reponse();
 

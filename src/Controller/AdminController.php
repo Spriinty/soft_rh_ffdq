@@ -88,10 +88,9 @@ class AdminController extends AbstractController
             $monthstat[$value['nom']]= $monthstatemotion; 
         }
 
-       dump($monthstat);die;
-        return $this->render('admin/index.html.twig', [
+    //    dump($monthstat);die;
+        return $this->render('admin/sondage.html.twig', [
             'monthstat' => $monthstat,
         ]);
     }
-
 }

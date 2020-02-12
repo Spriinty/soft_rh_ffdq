@@ -1,6 +1,9 @@
 {% extends 'index.html.twig' %}
 
-{% block contentvote %}
+{% block sondage %}
+
+{{ stat}}
+
    <div class="container-fluid">
         <div class="row">
                 <!-- NAVBAR-->
@@ -52,12 +55,18 @@
     <div class="container-fluid bg-green"> 
         <div class="container">
 
+
         {{stat | json_encode()}}
         {{dump(stat)}}
 
                 
                 {# <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
                     <p class="h2 pt-1 text-center text-uppercase">{{Name service A}}</p>                        
+
+            <div class="row flex-md-column flex-lg-row flex-xl-row justify-content-md-center justify-content-lg-around justify-content-xl-between">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
+                    <p class="h2 pt-1 text-center text-uppercase">{{service.nom}}</p>                        
+
                         <canvas id="myChart" width="250" height="250"></canvas>                         
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">

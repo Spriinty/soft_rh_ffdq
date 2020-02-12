@@ -33,6 +33,11 @@ class Emotion
      */
     private $reponses;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $color;
+
     public function __construct()
     {
         $this->reponses = new ArrayCollection();
@@ -95,6 +100,18 @@ class Emotion
                 $reponse->setEmotion(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(string $color): self
+    {
+        $this->color = $color;
 
         return $this;
     }

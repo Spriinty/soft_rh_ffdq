@@ -89,7 +89,7 @@ class AdminController extends AbstractController
         }
 
     //    dump($monthstat);die;
-        return $this->render('admin/index.html.twig', [
+        return $this->render('admin/sondage.html.twig', [
             'monthstat' => $monthstat,
         ]);
     }

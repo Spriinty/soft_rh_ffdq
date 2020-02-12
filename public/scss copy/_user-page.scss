@@ -1,0 +1,37 @@
+/************************* main-user *********************************/
+.main-user{
+    p{
+        font-family: $font-har-med;
+        color: $dark-green;
+        padding-top: 5px;
+    }
+    .tired{
+        color: $light-green;
+    }
+    .happy{
+        color: $orange;
+    }
+    .stressed{
+        color: $yellow;
+    }
+}
+
+/********************* mediaqueries ****************************/
+
+@media (max-width: 575.98px){
+
+    .main-user{
+
+        button, input, optgroup, select, textarea {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            width: 90%;
+        }
+
+        .h3, h3 {
+            font-size: 1.3rem;
+        }
+    }
+}

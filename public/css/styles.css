@@ -13,16 +13,9 @@
   background-size: cover;
   min-height: 100vh;
 }
-.bg-login .m-top {
-  margin-top: 250px;
-}
 .bg-login .bg-green-form {
   background-color: #004445;
   border-radius: 5px;
-}
-.bg-login .bg-green-form h1 {
-  top: -16%;
-  right: 8%;
 }
 .bg-login .bg-green-form label {
   font-family: "Montserrat", sans-serif;
@@ -38,11 +31,19 @@
 .bg-login .bg-green-form button {
   width: 150px;
   background-color: #f8b400;
+  border: 1px solid #f8b400;
   border-radius: 5px;
   color: #faf5e4;
   font-family: "Montserrat", sans-serif;
 }
 
+/************************* mediaqueries*********************************/
+@media (max-width: 575.98px) {
+  h1 img {
+    width: 240px;
+    height: 75px;
+  }
+}
 /************************* header *********************************/
 .bg-home {
   background-image: url(../medias/bg-body.png);
@@ -59,7 +60,7 @@ header p {
   letter-spacing: 5px;
 }
 
-/************************* header *********************************/
+/************************* mediaqueries *********************************/
 @media (min-width: 992px) and (max-width: 1199.98px) {
   header .h2 {
     font-size: 1.5rem;

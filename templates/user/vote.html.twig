@@ -1,31 +1,19 @@
 {% extends 'index.html.twig' %}
 
-{% block content 
-vote %}
+{% block contentvote %}
 
-    
         <div class="container-fluid">
             <div class="container text-center text-uppercase mt-5 pt-5">
                 <div class="row d-block">
-                    <p class="h3 mt-5 font-weight-bold">{{ controller_name }},</p>  <!--A COMPLETER VARIABLE-->
-                    <p class="h3 font-weight-bold">Comment vous sentez-vous ce {{ time }}?</p> <!--A COMPLETER VARIABLE-->
+                    {# <p class="h3 mt-5 font-weight-bold">{{ controller_name }},</p>  <!--A COMPLETER VARIABLE--> #}
+                    {# <p class="h3 font-weight-bold">Comment vous sentez-vous ce {{ time }}?</p> <!--A COMPLETER VARIABLE--> #}
                     <div class="div mt-5">
                         <ul class="list-unstyled d-flex flex-row justify-content-between">
                             {% for emotion in emotions %}
                                 <li class="d-flex flex-column">
                                     <a href="{{ path('reponse', { 'id': emotion.id}) }}">
                                     <input type="image" src="{{ emotion.imagesrc }}" alt="{{ emotion.name }}"></a>
-                                    <label for="tired" class="tired text-uppercase h3">Fatigué</label>
-                                </li>
-                                <li class="d-flex flex-column">
-                                    <a href="{{ path('reponse', { 'id': emotion.id}) }}">
-                                    <input type="image" src="{{ emotion.imagesrc }}" alt="{{ emotion.name }}"></a>
-                                    <label for="happy" class="happy text-uppercase h3">Heureux</label>
-                                </li>
-                                 <li class="d-flex flex-column">
-                                    <a href="{{ path('reponse', { 'id': emotion.id}) }}">
-                                    <input type="image" src="{{ emotion.imagesrc }}" alt="{{ emotion.name }}"></a>
-                                    <label for="stressed" class="stressed text-uppercase h3">Stressé</label>
+                                    <label for="{{ emotion.name }}" class="tired text-uppercase h3">{{ emotion.name }}</label>
                                 </li>
                             {% endfor %}
                         </ul>

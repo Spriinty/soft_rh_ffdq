@@ -50,9 +50,9 @@ class AdminController extends AbstractController
             $stat[$value['nom']]= $statemotion; 
         }
 
-
+        // dump($stat);die;
         return $this->render('admin/sondage.html.twig', [
-            'stat' => $stat
+            'stat' => json_encode($stat)
         ]);
     }
 

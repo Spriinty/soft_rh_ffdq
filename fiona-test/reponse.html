@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,26 +33,32 @@
     <title>Soft RH</title>
   </head>
 
-  <body>
-      <main>
-          <div class="container-fluid bg-login">
-              <div class="container">
-                <div class="row">
-                    <div class="position-relative col-4 mx-auto m-top bg-green-form">
-                        <h1 class="position-absolute"><img src="../medias/logo.png"></h1>
-                        <form method="post" class="d-flex flex-column mb-5">
-                            <label for="inputUsername" class="mt-5 text-uppercase">Identifiant :</label>
-                                <input class="mt-3 pt-2" type="text" value="{{ last_username }}" name="username" id="inputUsername" autocomplete="off" required>
-                            <label for="inputPassword" class="mt-5 text-uppercase">Mot de passe :</label>
-                                <input class="mt-3 pt-2" type="password" name="password" id="inputPassword" autocomplete="off" required>
-                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
-                            <button class="mt-5 mx-auto text-uppercase text-center" type="submit">Connexion</button>
-                        </form>
-                    </div>
-                </div>
-              </div>
-          </div>
-      </main>
-  </body>
-</html>
+<body>
+    <div class="container-fluid bg-green-login">
 
+        <form class=" box" action="index.html" methode="post">
+            <div class="d-flex justify-content-center pouet pb-5">
+                <img src="../medias/logo-soft-rh.jpg" alt="" />
+            </div>
+            <h2>choix validé</h2>
+            <div class="d-flex justify-content-center">
+                <img src="../medias/validé.png" alt="" class="icon"/>
+            </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

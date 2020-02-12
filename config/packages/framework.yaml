@@ -1,5 +1,5 @@
 framework:
-    # error_controller: App\Controller\ErrorController::index
+    #error_controller: App\Controller\ErrorController::index
 
     secret: '%env(APP_SECRET)%'
     #csrf_protection: true

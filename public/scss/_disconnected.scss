@@ -36,18 +36,59 @@
 }
 
 /*************************** mediaqueries *************/
+@media (min-width: 992px) and (max-width: 1199.98px){
+    .bg-green-login .box img {
+        vertical-align: middle;
+        border-style: none;
+        padding-top: 0px;
+    }
 
-@media (max-width: 575px){
-    .box{
-        width: 291px;
+    .bg-green-login .box h2, .bg-green-login .box h2 {
+        font-size: 2rem;
+        color: #ffffff;
+        margin-bottom: 2.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .bg-green-login .box .icon {
+        width: 180px;
+        height: 185px;
+    }
+
+} 
+@media (min-width: 768px) and (max-width: 991.98px){
+    .bg-green-login .box img {
+        vertical-align: middle;
+        border-style: none;
+        padding-top: 0px;
+    }
+
+    .bg-green-login .box h2, .bg-green-login .box h2 {
+        font-size: 2rem;
+        color: #ffffff;
+        margin-bottom: 2.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .bg-green-login .box .icon {
+        width: 180px;
+        height: 185px;
+    }
+
+}
+@media (max-width: 575.98px){
+    .bg-green-login .box {
+        width: 309px;
         padding: 50px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         background: #004445;
         text-align: center;
-        height: 400px;
+        height: 490px;
         border-radius: 5px;
-      }
+    }
 }

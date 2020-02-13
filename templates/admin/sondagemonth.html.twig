@@ -1,7 +1,6 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-
     <main class="main-admin">
     <div class="container-fluid">
             <div class="row">
@@ -34,15 +33,15 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 px-0 justify-content-center justify-content-sm-center justify-content-md-center d-flex flex-md-row flex-lg-column flex-xl-column align-items-end ml-md-0 ml-lg-5 ml-xl-5 mt-md-0 mt-lg-5 mt-xl-5 pt-md-0 pt-lg-5 pt-xl-5">  
                             <div class="d-flex pt-0 pt-sm-0 pt-md-0 pt-lg-5 pt-xl-0 mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-0 align-items-center">
                                 <div class="border-orange"></div>
-                                <p><img src="/medias/happy.gif" alt="happy--animate-emoticon" width="128" height="128"></p> 
+                                <p><img src="./public/medias/happy.gif" alt="happy--animate-emoticon" width="128" height="128"></p> 
                             </div class="d-flex align-items-center">
                             <div class="d-flex align-items-center">
                                 <div class="border-yellow"></div>
-                                <p><img src="/medias/stressed.gif" alt="stressed-animate-emoticon" width="128" height="128"></p> 
+                                <p><img src="./public/medias/stressed.gif" alt="stressed-animate-emoticon" width="128" height="128"></p> 
                             </div>
                             <div class="d-flex align-items-center">
                                 <div class="border-green"></div>                   
-                                <p><img src="/medias/tired.gif" alt="tired-animate-emoticon" width="128" height="128"></p>
+                                <p><img src="./public/medias/tired.gif" alt="tired-animate-emoticon" width="128" height="128"></p>
                             </div>
                         </div>
                     </div>
@@ -51,30 +50,30 @@
         </div> 
     
         <!--SERVICE SECTION-->
-        {# <div class="container-fluid bg-green"> 
+        <div class="container-fluid bg-green"> 
             <div class="container">
                 <div class="row flex-md-column flex-lg-row flex-xl-row justify-content-md-center justify-content-lg-around justify-content-xl-between">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
                         <p class="h2 pt-1 text-center text-uppercase">{{Name service A}}</p>                        
-                            <canvas id="myChartS1" width="250" height="250"></canvas>                         
+                            <canvas id="myChart" width="250" height="250"></canvas>                         
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
                         <p class="h2 pt-1 text-center text-uppercase">{{Name service B}}</p>                          
-                            <canvas id="myChartS2" width="250" height="250"></canvas>                                          
+                            <canvas id="myChart" width="250" height="250"></canvas>                                          
                     </div>
                 </div>
                 <div class="row pt-0 pt-sm-0 pt-md-0 pt-lg-5 pt-xl-5 pb-5 flex-md-column flex-lg-row flex-xl-row justify-content-md-center justify-content-lg-around justify-content-xl-between">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  text-center bg-beige mt-5">
                         <p class="h2 pt-1 text-center text-uppercase">{{Name service A}}</p>                        
-                            <canvas id="myChartS3" width="250" height="250"></canvas>                         
+                            <canvas id="myChart" width="250" height="250"></canvas>                         
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  text-center bg-beige mt-5">
                         <p class="h2 pt-1 text-center text-uppercase">{{Name service B}}</p>                          
-                            <canvas id="myChartS4" width="250" height="250"></canvas>                                          
+                            <canvas id="myChart" width="250" height="250"></canvas>                                          
                     </div>
                 </div>
             </div>
-        </div> #}
+        </div>
     </main>
 
     <!-- footer -->
@@ -82,16 +81,15 @@
         <div class="container-fluid bg-footer">
             <div class="container">
                 <div class="row d-flex justify-content-center">
-                    <p class="my-0 my-sm-2 my-md-2 my-lg-3 my-xl-5 pb-2 pb-sm-4 pb-md-4 pb-lg-4 pb-xl-0 pt-4"><img src="/medias/logo.png" alt="soft-rh-logo" width="320" height="85"></p>
+                    <p class="my-0 my-sm-2 my-md-2 my-lg-3 my-xl-5 pb-2 pb-sm-4 pb-md-4 pb-lg-4 pb-xl-0 pt-4"><img src="./public/medias/logo.png" alt="soft-rh-logo" width="320" height="85"></p>
                 </div>
-
             </div>
         </div>
     </footer>
-    
-    <script src="./public/script.js"></script>
+
+     <script src="./public/script.months.js"></script>
     <script>
-        datas={{stat|json_encode()}}
+        datas={{statmonth|json_encode()}}
         console.log(datas);
     </script>
 

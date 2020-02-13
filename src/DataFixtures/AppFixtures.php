@@ -71,19 +71,19 @@ class AppFixtures extends Fixture
 
         $emotion = new Emotion();
         $emotion->setName('Heureux');
-        $emotion->setImagesrc('../medias/happy.gif');
+        $emotion->setImagesrc('/medias/happy.gif');
         $emotion->setColor('happy');
         $manager->persist($emotion);
 
         $emotion = new Emotion();
         $emotion->setName('Fatigué');
-        $emotion->setImagesrc('../medias/tired.gif');
+        $emotion->setImagesrc('/medias/tired.gif');
         $emotion->setColor('tired');
         $manager->persist($emotion);
 
         $emotion = new Emotion();
         $emotion->setName('Stressé');
-        $emotion->setImagesrc('../medias/stressed.gif');
+        $emotion->setImagesrc('/medias/stressed.gif');
         $emotion->setColor('stressed');
         $manager->persist($emotion);
 

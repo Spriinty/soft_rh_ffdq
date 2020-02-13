@@ -23,19 +23,26 @@ class UserController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/user", name="user")
      */
-    public function default(EmotionRepository $emotionRepository)
+    public function default(EmotionRepository $emotionRepository )
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 
         // or add an optional message - seen by developers
         $this->denyAccessUnlessGranted('ROLE_USER', null, 'Seul le rôle user est autorisé');
 
-        // $user = $this->getUser();
+        $user = $this->getUser();
+        //Nouvelle dateTime
+        $time = new \DateTime();
+
+        //On récupère uniquement la date Année-Mois-Jour
+        $time->format('m-d');
 
         $emotions = $emotionRepository->findAll();
 
         return $this->render('user/vote.html.twig', [
-            'emotions' => $emotions
+            'emotions' => $emotions,
+            'user' => $user,
+            'time' => $time
         ]);
     }
 
@@ -60,7 +67,8 @@ class UserController extends AbstractController
 
         if($hasVoted!==null){
             return $this->render('user/dejavote.html.twig', [
-                'controller_name' => $time,
+                'time' => $time,
+                'userconnected' =>$user
             ]);  
         }
         // dump($hasVoted);die;

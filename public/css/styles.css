@@ -8,7 +8,7 @@
 /************************* bg-image *********************************/
 /************************* login-page *********************************/
 .bg-login {
-  background-image: url("asset('medias/bg-login.png')");
+  background-image: url(/medias/bg-login.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -46,7 +46,7 @@
 }
 /************************* header *********************************/
 .bg-home {
-  background-image: url(./public/medias/bg-body.png);
+  background-image: url(/medias/bg-body.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -115,6 +115,20 @@ header p {
 }
 .main-user input:focus, textarea:focus, select:focus, button:focus {
   outline: none;
+}
+.main-user .button-styles{
+  color: #faf5e4;
+  background-color: #004445;
+  width: 150px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  border: 2px solid; 
+}
+.main-user .button-styles:active{
+  border: 2px solid #f8b400;
+}
+.main-user .button-styles:hover{
+  border: 2px solid #f8b400;
 }
 
 /********************* mediaqueries ****************************/
@@ -276,7 +290,7 @@ header p {
 }
 /************************* disconnected page *********************************/
 .bg-green-login {
-  background-image: url(./public/medias/bg-login.png);
+  background-image: url(/medias/bg-login.png);
   min-height: 100vh;
   min-width: 100vw;
 }
@@ -367,10 +381,11 @@ header p {
 .main-404 h2{
     font-size: 4rem;
     margin-top: 150px;
+
 }
 /************************* footer *********************************/
 .bg-footer {
-  background-image: url(./public/medias/bg-footer.png);
+  background-image: url(/medias/bg-footer.png);
   background-size: cover;
   background-repeat: no-repeat;
   max-height: 100%;

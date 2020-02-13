@@ -88,11 +88,15 @@
         </div>
     </footer>
     
-    <script src="./public/script.js"></script>
+    <script src="{{asset("/chart.min.js")}}"></script>
     <script>
-        datas={{stat|json_encode()}}
-        console.log(datas);
+        const datasMyChart={{dailycompanyreponse|raw}};
+        const datasEachService= {{stat|raw}}
+        
+        console.log(datasEachService);
     </script>
+    <script src="{{asset("/script.js")}}"></script>
+    
 
     
 {% endblock %}

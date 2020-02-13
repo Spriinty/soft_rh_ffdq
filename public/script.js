@@ -40,7 +40,7 @@ var myDoughnutChartS1 = new Chart(ctxS1, {
         tooltips: {
             enabled: false,
         },
-        responsive: false,
+        // responsive: false,
     },
 
 });
@@ -62,7 +62,7 @@ var myDoughnutChartS2 = new Chart(ctxS2, {
         tooltips: {
             enabled: false,
         },
-        responsive: false,
+        // responsive: false,
     },
 
 });
@@ -84,7 +84,7 @@ var myDoughnutChartS3 = new Chart(ctxS3, {
         tooltips: {
             enabled: false,
         },
-        responsive: false,
+        // responsive: false,
     },
 
 });
@@ -106,7 +106,7 @@ var myDoughnutChartS4 = new Chart(ctxS4, {
         tooltips: {
             enabled: false,
         },
-        responsive: false,
+        // responsive: false,
     },
 });
 

@@ -41,14 +41,14 @@ class AdminController extends AbstractController
         $emotions = $emotionRepository->findAll();
 
         foreach ($service as $value) {
-            // $stat[$value['nom']]='';
+            $stat[$value['nom']]='';
             $statemotion = [];
             $i = 0;
             foreach ($emotions as $emotion) {
 
                 $reponse = $reponseRepository->dailyServiceResponse($value['id'], $emotion->getId());
-                $statemotion[$emotion->getName()][$i]['label'] = $emotion->getName();
-                $statemotion[$emotion->getName()][$i]['data'][] = $reponse['count'];
+                $statemotion[$i]['label'] = $emotion->getName();
+                $statemotion[$i]['data'][] = $reponse['count'];
                 switch ($emotion->getName()) {
                     case 'Heureux':
                         $bgColor = '#f16731';
@@ -60,10 +60,10 @@ class AdminController extends AbstractController
                         $bgColor = '#f8b400';
                         break;
                 }
-                $statemotion[$emotion->getName()][$i]['backgroundColor'][] = $bgColor;
+                $statemotion[$i]['backgroundColor'][] = $bgColor;
                 $i++;
             }
-            // $stat[$value['nom']]= $statemotion; 
+            $stat[$value['nom']]= $statemotion; 
         }
 
         $dailycompanystat = [];
@@ -88,8 +88,9 @@ class AdminController extends AbstractController
         }
 
         return $this->render('admin/sondage.html.twig', [
-            'stat' => json_encode($statemotion),
-            'dailycompanyreponse' => json_encode($dailycompanystat)
+            'stat' => json_encode($stat),
+            'dailycompanyreponse' => json_encode($dailycompanystat),
+            'services'=>$service
         ]);
     }
 
@@ -106,29 +107,67 @@ class AdminController extends AbstractController
         // or add an optional message - seen by developers
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Seul le rôle admin est authorisé');
         // $reponses= $reponseRepository->dailyCompanyResponse();
-        // dump($reponses);die;
+        // // dump($reponses);die;
         // $reponseperservice = $reponseRepository->dailyServiceResponse($id);
 
         $repository = $this->getDoctrine()->getRepository(Service::class);
         $service = $repository->AllserviceButRH();
-        $monthstat = [];
+        $stat = [];
 
         $emotions = $emotionRepository->findAll();
 
         foreach ($service as $value) {
-            $monthstat[$value['nom']] = '';
-            $monthstatemotion = [];
+            $stat[$value['nom']]='';
+            $statemotion = [];
+            $i = 0;
             foreach ($emotions as $emotion) {
 
-                $reponse = $reponseRepository->monthlyServiceResponse($value['id'], $emotion->getId());
-                $monthstatemotion[$emotion->getName()] = $reponse['count'];
+                $reponse = $reponseRepository->monthlyByServiceResponse($value['id'], $emotion->getId());
+                $statemotion[$i]['label'] = $emotion->getName();
+                $statemotion[$i]['data'][] = $reponse['count'];
+                switch ($emotion->getName()) {
+                    case 'Heureux':
+                        $bgColor = '#f16731';
+                        break;
+                    case 'Fatigué':
+                        $bgColor = '#2c786c';
+                        break;
+                    case 'Stressé':
+                        $bgColor = '#f8b400';
+                        break;
+                }
+                $statemotion[$i]['backgroundColor'][] = $bgColor;
+                $i++;
             }
-            $monthstat[$value['nom']] = $monthstatemotion;
+            $stat[$value['nom']]= $statemotion; 
         }
 
-        //    dump($monthstat);die;
-        return $this->render('admin/sondage.html.twig', [
-            'monthstat' => $monthstat,
+        $dailycompanystat = [];
+        $i = 0;
+        foreach ($emotions as $value) {
+            $reponse = $reponseRepository->monthlyServiceResponse($value->getId());
+            $dailycompanystat[$i]['label'] = $value->getName();
+            $dailycompanystat[$i]['data'][] = $reponse['count'];
+            switch ($value->getName()) {
+                case 'Heureux':
+                    $bgColor = '#f16731';
+                    break;
+                case 'Fatigué':
+                    $bgColor = '#2c786c';
+                    break;
+                case 'Stressé':
+                    $bgColor = '#f8b400';
+                    break;
+            }
+            $dailycompanystat[$i]['backgroundColor'][] = $bgColor;
+            $i++;
+        }
+
+        return $this->render('admin/sondagemonth.html.twig', [
+            'stat' => json_encode($stat),
+            'dailycompanyreponse' => json_encode($dailycompanystat),
+            'services'=>$service
         ]);
     }
+
 }

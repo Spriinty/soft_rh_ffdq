@@ -55,7 +55,24 @@ class ReponseRepository extends ServiceEntityRepository
          return $dbq[0];
     }
 
-    public function monthlyServiceResponse($serviceid, $emotionid){
+    public function monthlyServiceResponse( $emotionid ){
+
+        $monthlyperservice= new \DateTime();
+        $currentmonthperservice=$monthlyperservice->format('Y-m');
+
+        $dbq = $this->createQueryBuilder('r')
+         ->select('count(r.id) AS count')
+         
+         ->andWhere('r.emotion = :emotion')
+         ->andWhere('r.date LIKE :currentmonth')
+         ->setParameter('emotion', $emotionid)
+         ->setParameter('currentmonth', $currentmonthperservice. '-%')
+         ->getQuery()
+         ->getResult();
+         return $dbq[0];
+    }
+
+    public function monthlyByServiceResponse($serviceid, $emotionid){
 
         $monthlyperservice= new \DateTime();
         $currentmonthperservice=$monthlyperservice->format('Y-m');

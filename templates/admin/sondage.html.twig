@@ -14,10 +14,9 @@
                         </button>
                         <div class="mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-5 collapse navbar-collapse" id="navbarNavAltMarkup">     <!-- A COMPLETER VARIABLE-->
                             <div class="mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-5 pb-5 pb-sm-5 pb-md-5 pb-lg-0 pb-xl-0 navbar-nav d-flex flex-column text-center align-items-center">
-                            <a class="mt-5 nav-item nav-link" href="/sondage">Analyse du jour</a>
-                            <a class="mt-5 nav-item nav-link" href="/sondagemonth">Analyse du mois</a>
-                            <a class="mt-5 nav-item nav-link" href="/sondageyear">Analyse de l'année</a>
-                            <a class="mt-5 nav-item nav-link" href="logout.php">Déconnexion</a>
+                            <a class="mt-5 nav-item nav-link {% if app.request.attributes.get('_route') == 'admin_day' %} active {% endif %}" href="{{path('admin_day')}}">Analyse du jour</a>
+                            <a class="mt-5 nav-item nav-link {% if app.request.attributes.get('_route') == 'admin_month' %} active {% endif %}" href="{{path('admin_month')}}">Analyse du mois</a>
+                            <a class="mt-5 nav-item nav-link" href="{{path('logout')}}">Déconnexion</a>
                             </div>
                         </div>
                     </nav>
@@ -51,30 +50,30 @@
         </div> 
     
         <!--SERVICE SECTION-->
-        {# <div class="container-fluid bg-green"> 
+        <div class="container-fluid bg-green"> 
             <div class="container">
                 <div class="row flex-md-column flex-lg-row flex-xl-row justify-content-md-center justify-content-lg-around justify-content-xl-between">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
-                        <p class="h2 pt-1 text-center text-uppercase">{{Name service A}}</p>                        
-                            <canvas id="myChartS1" width="250" height="250"></canvas>                         
+                        <p class="h2 pt-1 text-center text-uppercase">{{services[0]['nom']}}</p>                        
+                            <canvas id="myChartS1" width="250" height="250"></canvas>                      
                     </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
-                        <p class="h2 pt-1 text-center text-uppercase">{{Name service B}}</p>                          
+                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center bg-beige mt-5">
+                        <p class="h2 pt-1 text-center text-uppercase">{{services[1]['nom']}}</p>                          
                             <canvas id="myChartS2" width="250" height="250"></canvas>                                          
                     </div>
                 </div>
                 <div class="row pt-0 pt-sm-0 pt-md-0 pt-lg-5 pt-xl-5 pb-5 flex-md-column flex-lg-row flex-xl-row justify-content-md-center justify-content-lg-around justify-content-xl-between">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  text-center bg-beige mt-5">
-                        <p class="h2 pt-1 text-center text-uppercase">{{Name service A}}</p>                        
+                        <p class="h2 pt-1 text-center text-uppercase">{{services[2]['nom']}}</p>                        
                             <canvas id="myChartS3" width="250" height="250"></canvas>                         
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  text-center bg-beige mt-5">
-                        <p class="h2 pt-1 text-center text-uppercase">{{Name service B}}</p>                          
+                        <p class="h2 pt-1 text-center text-uppercase">{{services[3]['nom']}}</p>                          
                             <canvas id="myChartS4" width="250" height="250"></canvas>                                          
                     </div>
                 </div>
             </div>
-        </div> #}
+        </div>
     </main>
 
     <!-- footer -->
@@ -91,9 +90,8 @@
     <script src="{{asset("/chart.min.js")}}"></script>
     <script>
         const datasMyChart={{dailycompanyreponse|raw}};
+        console.log(datasMyChart);
         const datasEachService= {{stat|raw}}
-        
-        console.log(datasEachService);
     </script>
     <script src="{{asset("/script.js")}}"></script>
     

@@ -8,7 +8,7 @@
 /************************* bg-image *********************************/
 /************************* login-page *********************************/
 .bg-login {
-  background-image: url(./public/medias/bg-login.png);
+  background-image: url("asset('medias/bg-login.png')");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -364,11 +364,9 @@ header p {
   }
 }
 /************************* 404 page *********************************/
-.main-404{
-  h2{
+.main-404 h2{
     font-size: 4rem;
     margin-top: 150px;
-  }
 }
 /************************* footer *********************************/
 .bg-footer {

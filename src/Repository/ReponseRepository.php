@@ -21,18 +21,20 @@ class ReponseRepository extends ServiceEntityRepository
         parent::__construct($registry, Reponse::class);
     }
 
-    public function dailyCompanyResponse(){
+    public function dailyCompanyResponse($emotion){
 
         $today= new \DateTime();
         $currentdate=$today->format('Y-m-d');
 
-        return $this->createQueryBuilder('r')
-        ->select('COUNT(r.emotion)')
+        $dbq=$this->createQueryBuilder('r')
+        ->select('COUNT(r.emotion) AS count')
         ->where("r.date >= :today")
-        ->groupby('r.emotion')
+        ->andWhere('r.emotion = :emotion')
         ->setParameter('today', $currentdate)
+        ->setParameter('emotion', $emotion)
         ->getQuery()
         ->getResult();
+        return $dbq[0];
     }
 
     public function dailyServiceResponse($serviceid, $emotionid){
@@ -53,7 +55,24 @@ class ReponseRepository extends ServiceEntityRepository
          return $dbq[0];
     }
 
-    public function monthlyServiceResponse($serviceid, $emotionid){
+    public function monthlyServiceResponse( $emotionid ){
+
+        $monthlyperservice= new \DateTime();
+        $currentmonthperservice=$monthlyperservice->format('Y-m');
+
+        $dbq = $this->createQueryBuilder('r')
+         ->select('count(r.id) AS count')
+         
+         ->andWhere('r.emotion = :emotion')
+         ->andWhere('r.date LIKE :currentmonth')
+         ->setParameter('emotion', $emotionid)
+         ->setParameter('currentmonth', $currentmonthperservice. '-%')
+         ->getQuery()
+         ->getResult();
+         return $dbq[0];
+    }
+
+    public function monthlyByServiceResponse($serviceid, $emotionid){
 
         $monthlyperservice= new \DateTime();
         $currentmonthperservice=$monthlyperservice->format('Y-m');

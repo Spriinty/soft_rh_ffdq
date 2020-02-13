@@ -50,6 +50,8 @@ class AdminController extends AbstractController
             $stat[$value['nom']]= $statemotion; 
         }
 
+        $stat = json_encode($stat);
+
         return $this->render('admin/sondage.html.twig', [
             'stat' => $stat
         ]);
@@ -87,7 +89,8 @@ class AdminController extends AbstractController
             $monthstat[$value['nom']]= $monthstatemotion; 
         }
 
-    //    dump($monthstat);die;
+    
+        $monthstat = json_encode($monthstat);
         return $this->render('admin/sondage.html.twig', [
             'monthstat' => $monthstat,
         ]);

@@ -11,6 +11,13 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.main-admin .navbar {
+  top: 0;
+  padding-top: 5px !important; /*spéciale dédicace Désirée*/
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
 .bg-login {
   background-image: url(/medias/bg-login.png);
   background-repeat: no-repeat;
@@ -45,6 +52,7 @@
   /* color: #f8b400!important; */
   background-color: #f16731!important;
 }
+
 .color-toggle{
   background-color:#faf5e4;
 }

@@ -45,6 +45,10 @@
   /* color: #f8b400!important; */
   background-color: #f16731!important;
 }
+.color-toggle{
+  background-color:#faf5e4;
+}
+
 
 /************************* mediaqueries*********************************/
 @media (max-width: 575.98px) {

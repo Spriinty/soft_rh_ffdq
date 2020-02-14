@@ -292,7 +292,7 @@ header p {
 .bg-green-login {
   background-image: url(/medias/bg-login.png);
   min-height: 100vh;
-  min-width: 100vw;
+  /* min-width: 100vw; */
 }
 .bg-green-login .box {
   width: 415px;

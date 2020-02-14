@@ -41,6 +41,11 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.navbar-light .navbar-nav .active{
+  /* color: #f8b400!important; */
+  background-color: #f16731!important;
+}
+
 /************************* mediaqueries*********************************/
 @media (max-width: 575.98px) {
   h1 img {
@@ -157,6 +162,7 @@ header p {
   border-radius: 5px;
   border: 2px solid;
 }
+
 .main-admin .navbar-light .navbar-nav .nav-link:active {
   border: 2px solid #f8b400;
 }

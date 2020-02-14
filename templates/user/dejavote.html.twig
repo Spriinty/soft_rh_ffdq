@@ -45,8 +45,9 @@
                     <img src="{{ asset('medias/logo.png') }}" alt="" />
                 </div>
                 <h2>Vous avez déjà voté aujourd'hui</h2>
-                <div class="d-flex justify-content-center">
-                    <img src="{{ asset('medias/validé.png') }}" alt="" class="icon"/>
+                <div class="d-flex flex-column align-items-center">
+                    <img src="{{ asset('medias/validé.png') }}" alt="" class="icon img-fluid"/>
+                    <a class="mt-4 text-white text-decoration-none deconnexion rounded pl-3 pr-3 pt-1 pb-1 montserrat" href="{{path('logout')}}">DÉCONNEXION</a>
                 </div>
             </form>
         </div>

@@ -7,6 +7,10 @@
 }
 /************************* bg-image *********************************/
 /************************* login-page *********************************/
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+}
+
 .bg-login {
   background-image: url(/medias/bg-login.png);
   background-repeat: no-repeat;
@@ -316,8 +320,12 @@ header p {
   color: #ffffff;
 }
 .bg-green-login .box .icon {
-  width: 180px;
-  height: 200px;
+  width: 20%;
+    height: auto;
+}
+
+.deconnexion{
+  background-color:#2c786c;
 }
 
 /*************************** mediaqueries *************/

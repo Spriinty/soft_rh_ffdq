@@ -52,15 +52,19 @@ class AdminController extends AbstractController
                 switch ($emotion->getName()) {
                     case 'Heureux':
                         $bgColor = '#f16731';
+                        $hoverBgColor = '#f16731';
                         break;
                     case 'Fatigué':
                         $bgColor = '#2c786c';
+                        $hoverBgColor = '#2c786c';
                         break;
                     case 'Stressé':
                         $bgColor = '#f8b400';
+                        $hoverBgColor = '#f8b400';
                         break;
                 }
                 $statemotion[$i]['backgroundColor'][] = $bgColor;
+                $dailycompanystat[$i]['hoverBackgroundColor'][] = $hoverBgColor;
                 $i++;
             }
             $stat[$value['nom']]= $statemotion; 
@@ -75,15 +79,19 @@ class AdminController extends AbstractController
             switch ($value->getName()) {
                 case 'Heureux':
                     $bgColor = '#f16731';
+                    $hoverBgColor = '#f16731';
                     break;
                 case 'Fatigué':
                     $bgColor = '#2c786c';
+                    $hoverBgColor = '#2c786c';
                     break;
                 case 'Stressé':
                     $bgColor = '#f8b400';
+                    $hoverBgColor = '#f8b400';
                     break;
             }
             $dailycompanystat[$i]['backgroundColor'][] = $bgColor;
+            $dailycompanystat[$i]['hoverBackgroundColor'][] = $hoverBgColor;
             $i++;
         }
 
@@ -128,15 +136,20 @@ class AdminController extends AbstractController
                 switch ($emotion->getName()) {
                     case 'Heureux':
                         $bgColor = '#f16731';
+                        $hoverBgColor = '#f16731';
                         break;
                     case 'Fatigué':
                         $bgColor = '#2c786c';
+                        $hoverBgColor = '#2c786c';
                         break;
                     case 'Stressé':
                         $bgColor = '#f8b400';
+                        $hoverBgColor = '#2c786c';
                         break;
                 }
                 $statemotion[$i]['backgroundColor'][] = $bgColor;
+                $statemotion[$i]['hoverBackgroundColor'][] = $hoverBgColor;
+
                 $i++;
             }
             $stat[$value['nom']]= $statemotion; 
@@ -151,15 +164,19 @@ class AdminController extends AbstractController
             switch ($value->getName()) {
                 case 'Heureux':
                     $bgColor = '#f16731';
+                    $hoverBgColor = '#f16731';
                     break;
                 case 'Fatigué':
                     $bgColor = '#2c786c';
+                    $hoverBgColor = '#2c786c';
                     break;
                 case 'Stressé':
                     $bgColor = '#f8b400';
+                    $hoverBgColor = '#f8b400';
                     break;
             }
             $dailycompanystat[$i]['backgroundColor'][] = $bgColor;
+            $dailycompanystat[$i]['hoverBackgroundColor'][] = $hoverBgColor;
             $i++;
         }
 

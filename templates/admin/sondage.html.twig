@@ -78,5 +78,11 @@
         </div>
     </main>
 
-
+<script src="{{asset("/chart.min.js")}}"></script>
+<script>
+const datasMyChart = {{ dailycompanyreponse|raw }};
+console.log(datasMyChart);
+const datasEachService = {{ stat|raw }}
+</script>
+<script src="{{asset("/script.js")}}"></script>
 {% endblock %}
